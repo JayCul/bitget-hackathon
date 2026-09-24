@@ -43,6 +43,17 @@ Per-entry docs: `https://agent.bitget.com/docs/<category>/<entry_id>`.
 
 Agent Hub `@bitget-ai/bitget-signal` 1.2.0 (inspected from npm tarball, not installed): `news-briefing` is crypto/macro RSS aggregation via a separate MCP (`datahub.noxiaohao.com`), keyword filter only, no equity-ticker news. Not needed given `news_label_search`.
 
+### Daily OHLC fallback (Bitget equity K-lines unavailable)
+
+| Provider | Result |
+|---|---|
+| Tiingo free | Licence: free tier is internal use and "may not display or share the data with another person". Ruled out for a public demo |
+| Alpha Vantage free | Licence allows personal, non-commercial research use. But `TIME_SERIES_DAILY&outputsize=full` returns "premium feature" (verified with a real key, `docs/raw/av-NVDA.json`). Free tier is compact only (100 days). Ruled out for analogs |
+| Stooq | JS proof-of-work bot gate. Ruled out |
+| Yahoo chart API | Works without a key but unofficial, ToS prohibits. Ruled out |
+
+**Undecided.** See the session report for options.
+
 ## Landed
 
 | Check | Result |
