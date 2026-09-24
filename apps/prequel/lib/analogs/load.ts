@@ -92,6 +92,36 @@ async function loadTicker(ticker: string, now: number) {
   return { ticker, bars, candidates, failures, from };
 }
 
+/** Hourly rToken bars for a window (cached pages). */
+export async function hourlyBars(ticker: string, from: number, to: number) {
+  return hourly(ticker, Math.floor(from / HOUR) * HOUR, Math.floor(to / HOUR) * HOUR);
+}
+
+/** Raw analyst price-target rows (cached). */
+export function priceTargetRows(ticker: string) {
+  return source(`targets:${ticker}`, TTL_FUNDAMENTALS, () => bitget.priceTargets(ticker, 1000));
+}
+
+/** Raw earnings calendar rows (cached), for scheduled upcoming dates. */
+export function calendarRows(ticker: string) {
+  return source(`calendar:${ticker}`, TTL_FUNDAMENTALS, () => bitget.earningsCalendar(ticker));
+}
+
+/**
+ * Point-in-time view: nothing on or after `asOf` is visible. Bars are cut at the last session
+ * before asOf, candidates must precede asOf, and earnings events whose date alignment relied on a
+ * reaction session at or after asOf are dropped.
+ */
+export function asOfUniverse(u: Universe, asOf: string): Universe {
+  const bars = Object.fromEntries(Object.entries(u.bars).map(([t, b]) => [t, b.filter((x) => x.date < asOf)]));
+  const candidates = u.candidates.filter((c) => {
+    if (c.date >= asOf) return false;
+    const reaction = c.facts.reaction_session;
+    return !(c.type === "earnings" && typeof reaction === "string" && reaction >= asOf);
+  });
+  return { ...u, bars, candidates, window: { from: u.window.from, to: asOf } };
+}
+
 /** Load bars and candidate events for a ticker and its peers. Failures are returned, never hidden. */
 export async function loadUniverse(tickers: string[], now = Date.now()): Promise<Universe> {
   const results = await pool(tickers, 3, (t) => loadTicker(t, now));

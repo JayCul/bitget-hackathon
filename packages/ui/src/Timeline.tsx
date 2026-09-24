@@ -1,5 +1,3 @@
-"use client";
-import { motion, useReducedMotion } from "framer-motion";
 import type { ReactNode } from "react";
 
 export type TimelineItem = {
@@ -26,7 +24,6 @@ export function Timeline({
   label: string;
   className?: string;
 }) {
-  const reduce = useReducedMotion();
   const horizontal = orientation === "horizontal";
   return (
     <ol
@@ -34,16 +31,14 @@ export function Timeline({
       className={`relative ${horizontal ? "flex gap-6 overflow-x-auto pb-2" : "flex flex-col"} ${className}`}
     >
       {items.map((item, i) => (
-        <motion.li
+        <li
           key={item.id}
-          initial={reduce ? false : { opacity: 0, y: 12 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.45, delay: i * 0.07 }}
-          className={
+          style={{ ["--d" as string]: `${Math.min(i, 10) * 50}ms` }}
+          className={`rise group ${
             horizontal
               ? "relative min-w-[200px] shrink-0 border-t border-line pt-4"
               : "relative grid grid-cols-[72px_16px_1fr] gap-x-3 pb-6 last:pb-0"
-          }
+          }`}
         >
           {horizontal ? (
             <>
@@ -75,7 +70,7 @@ export function Timeline({
               </div>
             </>
           )}
-        </motion.li>
+        </li>
       ))}
     </ol>
   );

@@ -30,6 +30,11 @@ export function modelName(tier: ModelTier = "main") {
   return tier === "fast" ? (process.env.LLM_MODEL_FAST ?? main) : main;
 }
 
+/** Keep reasoning short on reasoning models; these calls classify and generate, they don't need long chains. */
+function reasoningParams(model: string): { reasoning_effort?: "low" } {
+  return model.startsWith("openai/gpt-oss") ? { reasoning_effort: "low" } : {};
+}
+
 /** Qwen3-family models may emit a reasoning block before the answer. */
 function stripThinking(text: string) {
   return text.replace(/<think>[\s\S]*?<\/think>/g, "").trim();
@@ -59,11 +64,13 @@ export async function structured<T>(opts: {
   let lastError = "";
   let lastRaw = "";
   for (let attempt = 0; attempt < 2; attempt++) {
+    const model = modelName(opts.tier);
     const res = await getClient().chat.completions.create({
-      model: modelName(opts.tier),
+      model,
       messages,
       temperature: opts.temperature ?? 0.4,
       response_format: { type: "json_object" },
+      ...reasoningParams(model),
     });
     lastRaw = res.choices[0]?.message.content ?? "";
     let parsed: unknown;
@@ -87,8 +94,10 @@ export async function structured<T>(opts: {
 
 /** Plain-text explanation. Used only to explain numbers computed elsewhere. */
 export async function explain(opts: { system: string; user: string; tier?: ModelTier }): Promise<string> {
+  const model = modelName(opts.tier);
   const res = await getClient().chat.completions.create({
-    model: modelName(opts.tier),
+    model,
+    ...reasoningParams(model),
     messages: [
       { role: "system", content: opts.system },
       { role: "user", content: opts.user },

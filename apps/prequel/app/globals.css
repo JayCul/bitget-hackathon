@@ -1,2 +1,27 @@
 @import "tailwindcss";
 @import "@desk/ui/theme.css";
+
+@keyframes hero-ring {
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 0.6;
+  }
+  50% {
+    transform: scale(1.35);
+    opacity: 0.1;
+  }
+}
+.hero-ring {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: hero-ring 3.2s ease-in-out infinite;
+}
+@media (prefers-reduced-motion: reduce) {
+  .hero-pulse {
+    display: none;
+  }
+  .hero-ring {
+    animation: none;
+  }
+}

@@ -1,38 +1,43 @@
 import "server-only";
 import { structured } from "@desk/llm";
 import { z } from "zod";
+import { shortlist, type AnalogFilter } from "./shortlist";
 import type { Candidate, CandidateType } from "./types";
 
 export type AnalogQuery = {
   headlineId: string;
   headline: string;
   analogQuery: string;
-  /** which candidate types can match; routes the query so the prompt stays small */
-  types: CandidateType[];
+  filter: AnalogFilter;
 };
 
 const MAX_PER_QUERY = 10;
 
+const MIN_PER_QUERY = 5;
+
 const Selection = z.object({
-  matches: z.array(
-    z.object({
-      headline_id: z.string(),
-      ids: z.array(z.string()).max(MAX_PER_QUERY * 3),
-      // Shown numbers come from code only, so the AI's reason may not contain digits.
-      reason: z.string().refine((s) => !/\d/.test(s), "reason must not contain numbers"),
-    }),
-  ),
+  matches: z.array(z.object({ headline_id: z.string(), ids: z.array(z.string()).max(40), reason: z.string() })),
 });
 
+/** Per-call schema: every query with a non-empty shortlist must get at least min(5, n) ids. */
+function selectionFor(sizes: Record<string, number>) {
+  return Selection.superRefine((o, ctx) => {
+    for (const [id, n] of Object.entries(sizes)) {
+      const need = Math.min(MIN_PER_QUERY, n);
+      const got = o.matches.find((m) => m.headline_id === id)?.ids.length ?? 0;
+      if (got < need) ctx.addIssue({ code: "custom", message: `${id} needs at least ${need} ids from its list, got ${got}` });
+    }
+  });
+}
+
 const SYSTEM = `You match trade scenarios to past market events.
-Candidates are lines of: id|date|ticker|description|flags. Queries are lines of: headline_id: what to look for.
-For each query, return ids of candidates that are the same kind of event, up to ${MAX_PER_QUERY}.
-- Use ids exactly as given. Never invent ids.
-- Match on substance: direction (beat vs miss, raise vs cut, up vs down gap) and type.
+Each query comes with its own short list of candidate events (id|date|ticker|description|flags), already filtered by code to the right type and direction.
+For each query, rank the ids from THAT query's list by how closely they resemble the scenario and return the best ${MIN_PER_QUERY} to ${MAX_PER_QUERY} (all of them if the list is shorter than ${MIN_PER_QUERY}).
+- Peers count: an event on another semiconductor stock is a valid analog.
+- Only use ids listed under that query. Never invent ids.
 - Descriptions contain no price outcomes. Do not guess outcomes.
-- Prefer the thesis ticker, then peers. "rx" flag = reaction to another event, "pe" = right after earnings.
-- An empty list is valid. Do not pad.
-- reason: one short sentence, no numbers or percentages (the app shows computed figures separately).
+- Prefer the thesis ticker, then close peers. "rx" = reaction to another event, "pe" = right after earnings.
+- reason: one short sentence, no numbers or percentages.
 JSON only: {"matches":[{"headline_id":"...","ids":["..."],"reason":"..."}]}`;
 
 const PREFIX: Record<CandidateType, string> = { earnings: "e", analyst: "a", gap: "g" };
@@ -60,61 +65,59 @@ function compact(c: Candidate): string {
 }
 
 export type MatchResult = {
-  byHeadline: Record<string, { ids: string[]; reason: string; droppedIds: string[] }>;
+  byHeadline: Record<string, { ids: string[]; reason: string; droppedIds: string[]; shortlisted: number }>;
   calls: number;
 };
 
 /**
- * The LLM identifies analogs by short id. Code maps ids back, validates them, caps counts, and
- * drops a gap-day candidate when the earnings event it reacts to is also selected.
- * Queries are grouped by allowed types; one sequential call per group keeps each prompt small.
+ * Code shortlists candidates per query (type + direction). The LLM picks ids from each shortlist.
+ * Code validates ids against that query's shortlist, caps counts, and drops a gap-day candidate when
+ * the earnings event it reacts to is also selected. One call for all queries.
  */
 export async function matchAnalogs(ticker: string, queries: AnalogQuery[], candidates: Candidate[]): Promise<MatchResult> {
-  const groups = new Map<string, AnalogQuery[]>();
-  for (const q of queries) {
-    const key = [...new Set(q.types)].sort().join(",");
-    groups.set(key, [...(groups.get(key) ?? []), q]);
-  }
+  const sidOf = new Map<string, string>();
+  const bySid = new Map<string, Candidate>();
+  const counters: Partial<Record<CandidateType, number>> = {};
+  const sid = (c: Candidate) => {
+    let s = sidOf.get(c.id);
+    if (!s) {
+      const n = (counters[c.type] = (counters[c.type] ?? 0) + 1);
+      s = `${PREFIX[c.type]}${n}`;
+      sidOf.set(c.id, s);
+      bySid.set(s, c);
+    }
+    return s;
+  };
+
+  const lists = queries.map((q) => ({ q, items: shortlist(candidates, q.filter, ticker) }));
+  const user = [
+    `Thesis ticker: ${ticker}`,
+    ...lists.flatMap(({ q, items }) => [
+      "",
+      `Query ${q.headlineId}: ${q.analogQuery} (scenario: ${q.headline})`,
+      ...(items.length ? items.map((c) => `${sid(c)}|${compact(c)}`) : ["(no candidates)"]),
+    ]),
+  ].join("\n");
+
+  const needsLlm = lists.some((l) => l.items.length > 0);
+  const sizes = Object.fromEntries(lists.filter((l) => l.items.length).map((l) => [l.q.headlineId, l.items.length]));
+  const out = needsLlm ? await structured({ schema: selectionFor(sizes), system: SYSTEM, user, temperature: 0.1 }) : { matches: [] };
 
   const byHeadline: MatchResult["byHeadline"] = {};
-  let calls = 0;
-  for (const [key, qs] of groups) {
-    const types = key.split(",") as CandidateType[];
-    const pool = candidates.filter((c) => types.includes(c.type));
-    const shortToFull = new Map<string, Candidate>();
-    const counters: Partial<Record<CandidateType, number>> = {};
-    const lines = pool.map((c) => {
-      const n = (counters[c.type] = (counters[c.type] ?? 0) + 1);
-      const sid = `${PREFIX[c.type]}${n}`;
-      shortToFull.set(sid, c);
-      return `${sid}|${compact(c)}`;
-    });
-
-    const user = [
-      `Thesis ticker: ${ticker}`,
-      "Candidates:",
-      ...lines,
-      "Queries:",
-      ...qs.map((q) => `${q.headlineId}: ${q.analogQuery} (scenario: ${q.headline})`),
-    ].join("\n");
-
-    const out = pool.length
-      ? await structured({ schema: Selection, system: SYSTEM, user, temperature: 0.1 })
-      : { matches: [] };
-    if (pool.length) calls++;
-
-    for (const q of qs) {
-      const m = out.matches.find((x) => x.headline_id === q.headlineId);
-      const raw = [...new Set(m?.ids ?? [])];
-      const droppedIds = raw.filter((id) => !shortToFull.has(id));
-      const chosen = raw.flatMap((id) => shortToFull.get(id) ?? []);
-      const earningsTickers = new Set(chosen.filter((c) => c.type === "earnings").map((c) => c.ticker));
-      const ids = chosen
-        .filter((c) => !(c.type === "gap" && c.flags.includes("earnings_reaction") && earningsTickers.has(c.ticker)))
-        .map((c) => c.id)
-        .slice(0, MAX_PER_QUERY);
-      byHeadline[q.headlineId] = { ids, reason: m?.reason ?? "", droppedIds };
-    }
+  for (const { q, items } of lists) {
+    const allowed = new Set(items.map((c) => sidOf.get(c.id)!));
+    const m = out.matches.find((x) => x.headline_id === q.headlineId);
+    const raw = [...new Set(m?.ids ?? [])];
+    const droppedIds = raw.filter((id) => !allowed.has(id));
+    const chosen = raw.filter((id) => allowed.has(id)).map((id) => bySid.get(id)!);
+    const earningsTickers = new Set(chosen.filter((c) => c.type === "earnings").map((c) => c.ticker));
+    const ids = chosen
+      .filter((c) => !(c.type === "gap" && c.flags.includes("earnings_reaction") && earningsTickers.has(c.ticker)))
+      .map((c) => c.id)
+      .slice(0, MAX_PER_QUERY);
+    // Shown numbers come from code only: a reason that contains figures is withheld, ids are kept.
+    const reason = m?.reason && !/\d/.test(m.reason) ? m.reason : "";
+    byHeadline[q.headlineId] = { ids, reason, droppedIds, shortlisted: items.length };
   }
-  return { byHeadline, calls };
+  return { byHeadline, calls: needsLlm ? 1 : 0 };
 }

@@ -15,7 +15,7 @@ const Body = z.object({
         headlineId: z.string(),
         headline: z.string(),
         analogQuery: z.string(),
-        types: z.array(z.enum(["earnings", "analyst", "gap"])).min(1),
+        filter: z.object({ type: z.enum(["earnings", "analyst", "gap"]), direction: z.enum(["positive", "negative", "any"]) }),
       }),
     )
     .min(1)
