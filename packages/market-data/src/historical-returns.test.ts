@@ -50,6 +50,19 @@ describe("eventReturn", () => {
     expect(r.ret5d).toBeNull();
   });
 
+  it("at_open measures from the event-day open, excluding the gap", () => {
+    const r = eventReturn(bars, "2024-01-03", "at_open")!;
+    expect(r.baseClose).toBe(105);
+    expect(r.ret1d).toBeCloseTo(110 / 105 - 1); // same-day close
+    expect(r.ret5d).toBeCloseTo(90 / 105 - 1); // 2024-01-09, fifth session counting the event day
+    expect(r.path[0]).toEqual({ date: "2024-01-03", close: 105 });
+    expect(eventReturn(bars, "2024-01-08", "at_open")!.ret5d).toBeNull(); // window runs past data
+  });
+
+  it("at_open returns null on a non-trading date", () => {
+    expect(eventReturn(bars, "2024-01-06", "at_open")).toBeNull();
+  });
+
   it("returns null when the event predates the series", () => {
     expect(eventReturn(bars, "2023-12-01", "before_open")).toBeNull();
   });

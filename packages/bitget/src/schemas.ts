@@ -64,7 +64,11 @@ export const EarningsCalendarRow = z.looseObject({
   period_ending: z.string(),
   fiscal_year: z.string(),
   report_type_name: z.string(),
+  /** actual results-briefing date, when known */
+  perf_brief_dsclsr_date: z.string().nullable().optional(),
+  /** report filing date */
   perf_report_dsclsr_date: z.string().nullable(),
+  /** scheduled briefing date (forecast) */
   perf_briefing_fore_dsclsr_date: z.string().nullable(),
   /** "盘后" = after close, "盘前" = before open */
   is_trading_time: z.string().nullable(),
@@ -91,6 +95,7 @@ export const ConsensusRow = z.looseObject({
   fiscal_year: z.number().nullable(),
   fore_mean: num.nullable(),
   fore_org_num: num.nullable(),
+  data_source: z.string().nullable().optional(),
   scraped_date: z.string(),
 });
 export type ConsensusRow = z.infer<typeof ConsensusRow>;

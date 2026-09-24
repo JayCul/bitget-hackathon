@@ -24,5 +24,7 @@ export interface DailyPriceProvider {
  * When the event hit the tape relative to the session on its date.
  * after_close: the event-date close is the last pre-event price.
  * before_open: the previous session's close is the last pre-event price.
+ * at_open: the event is the open itself (gap days); base is the event-date open, so the
+ *   gap is not counted as part of the outcome.
  */
-export type EventTiming = "after_close" | "before_open";
+export type EventTiming = "after_close" | "before_open" | "at_open";

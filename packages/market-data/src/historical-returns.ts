@@ -39,14 +39,28 @@ export function closeToClose(base: number, target: number): number {
  * Returns null when there is no base bar (event predates the series).
  */
 export function eventReturn(bars: DailyBar[], eventDate: string, timing: EventTiming): EventReturn | null {
+  if (timing === "at_open") {
+    // Base is the open of the event session; +1d is that session's close, +5d four sessions later.
+    const i = bars.findIndex((b) => b.date === eventDate);
+    if (i < 0) return null;
+    const base = bars[i]!;
+    const b1 = bars[i];
+    const b5 = bars[i + 4];
+    return {
+      eventDate,
+      baseDate: base.date,
+      baseClose: base.open,
+      ret1d: b1 ? closeToClose(base.open, b1.close) : null,
+      ret5d: b5 ? closeToClose(base.open, b5.close) : null,
+      path: [{ date: base.date, close: base.open }, ...bars.slice(i, i + 5).map((b) => ({ date: b.date, close: b.close }))],
+    };
+  }
   const i = anchorIndex(bars, eventDate, timing === "after_close");
   if (i < 0) return null;
   const base = bars[i]!;
-  // A before_open event on a non-trading date still anchors to the prior close; an after_close
-  // event on a non-trading date also anchors to the prior close, which is correct.
-  const at = (k: number) => bars[i + k];
-  const b1 = at(1);
-  const b5 = at(5);
+  // An event on a non-trading date anchors to the prior close under either timing, which is correct.
+  const b1 = bars[i + 1];
+  const b5 = bars[i + 5];
   const path = bars.slice(i, i + 6).map((b) => ({ date: b.date, close: b.close }));
   return {
     eventDate,
