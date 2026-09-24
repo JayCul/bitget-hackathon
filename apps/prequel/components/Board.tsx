@@ -108,7 +108,7 @@ export function BoardHeader({ board }: { board: BoardT }) {
   const t = board.thesis;
   const c = board.context;
   return (
-    <div className="grid gap-8 lg:grid-cols-[1fr_auto] lg:items-end">
+    <div className="flex flex-col gap-8">
       <div className="flex min-w-0 flex-col gap-4">
         <div className="flex flex-wrap items-center gap-3">
           <span className="font-mono text-xs text-muted">{t.mode === "replay" ? `As of ${t.asOf}` : `Live · ${t.asOf}`}</span>
@@ -123,7 +123,7 @@ export function BoardHeader({ board }: { board: BoardT }) {
         </h1>
         <p className="max-w-2xl text-[15px] leading-relaxed text-muted">{t.text}</p>
       </div>
-      <dl className="grid grid-cols-3 gap-6 lg:gap-10">
+      <dl className="grid max-w-3xl grid-cols-3 gap-6 border-t border-line pt-6 lg:gap-10">
         <div className="flex flex-col gap-1.5">
           <dt className="text-xs text-muted">Reference close</dt>
           <dd className="font-mono text-xl tabular-nums">${c.refPrice.toFixed(2)}</dd>

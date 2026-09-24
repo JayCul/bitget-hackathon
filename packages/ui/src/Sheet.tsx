@@ -1,5 +1,6 @@
 "use client";
 import { useEffect, useId, useRef, type ReactNode } from "react";
+import { createPortal } from "react-dom";
 
 /** Bottom sheet under 768px, right side panel above. Esc and backdrop close it; focus moves in and returns. */
 export function Sheet({
@@ -34,8 +35,9 @@ export function Sheet({
     };
   }, [open]);
 
-  if (!open) return null;
-  return (
+  if (!open || typeof document === "undefined") return null;
+  // Portal to <body> so ancestor stacking contexts (animations, transforms) cannot trap the panel under the header.
+  return createPortal(
     <div className="fixed inset-0 z-50">
       <div aria-hidden className="fade-in absolute inset-0 bg-black/60" onClick={() => close.current()} />
       <div
@@ -64,6 +66,7 @@ export function Sheet({
         </div>
         <div className="px-6 py-6">{children}</div>
       </div>
-    </div>
+    </div>,
+    document.body,
   );
 }

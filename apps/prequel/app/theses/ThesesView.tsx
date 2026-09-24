@@ -2,11 +2,14 @@
 import { Button, DisplayHeading, ResearchLoader } from "@desk/ui";
 import Link from "next/link";
 import { useCallback, useEffect, useState } from "react";
-import { Board } from "@/components/Board";
+import { DataTag } from "@desk/ui";
+import { Board, HeadlineRow } from "@/components/Board";
+import { DEMO_BOARD } from "@/lib/demo";
+import { STEPS } from "@/lib/prequel/steps";
 import { SectionLabel } from "@/components/Shell";
 import { ThesisForm } from "@/components/ThesisForm";
 import type { Board as BoardT } from "@/lib/prequel/types";
-import { actions, useActiveBoard, useStore } from "@/lib/store";
+import { actions, peekActiveId, useActiveBoard, useStore } from "@/lib/store";
 import { useResearch } from "@/lib/useResearch";
 
 type View = "form" | "research" | "board";
@@ -15,15 +18,10 @@ export function ThesesView() {
   const store = useStore();
   const active = useActiveBoard();
   const [view, setView] = useState<View>("form");
-  const [hydrated, setHydrated] = useState(false);
-
   // Show the active board on arrival if there is one.
   useEffect(() => {
-    if (!hydrated) {
-      setHydrated(true);
-      if (active) setView("board");
-    }
-  }, [active, hydrated]);
+    if (peekActiveId()) setView("board");
+  }, []);
 
   const onBoard = useCallback((b: BoardT) => {
     actions.addBoard(b);
@@ -44,14 +42,19 @@ export function ThesesView() {
               will do before any of it happens.
             </p>
           </div>
-          <ThesisForm
-            busy={r.status === "running"}
-            onSubmit={(t) => {
-              setView("research");
-              void r.run(t);
-            }}
-          />
-          {store.boards.length ? <SavedTheses onOpen={() => setView("board")} /> : null}
+          <div className="grid gap-16 lg:grid-cols-[minmax(0,1fr)_340px] lg:gap-12">
+            <div className="flex min-w-0 flex-col gap-12">
+              <ThesisForm
+                busy={r.status === "running"}
+                onSubmit={(t) => {
+                  setView("research");
+                  void r.run(t);
+                }}
+              />
+              {store.boards.length ? <SavedTheses onOpen={() => setView("board")} /> : null}
+            </div>
+            <FormAside />
+          </div>
         </div>
       ) : view === "research" ? (
         <div
@@ -102,6 +105,40 @@ export function ThesesView() {
         </div>
       )}
     </>
+  );
+}
+
+function FormAside() {
+  const sample = DEMO_BOARD.headlines.find((h) => h.side === "RED" && (h.analogs?.stats.n ?? 0) > 0) ?? DEMO_BOARD.headlines[0]!;
+  return (
+    <aside aria-label="What happens next" className="flex flex-col gap-10 lg:sticky lg:top-24 lg:self-start">
+      <div className="flex flex-col gap-4">
+        <SectionLabel>What happens next</SectionLabel>
+        <ol className="flex flex-col">
+          {STEPS.map((s, i) => (
+            <li key={s.id} className="grid grid-cols-[28px_1fr] gap-2 border-t border-line py-3 first:border-t-0">
+              <span className="font-mono text-xs text-accent">{String(i + 1).padStart(2, "0")}</span>
+              <div>
+                <div className="text-sm">{s.label}</div>
+                <div className="font-mono text-[11px] text-muted">{s.call}</div>
+              </div>
+            </li>
+          ))}
+        </ol>
+      </div>
+      <div className="flex flex-col gap-3">
+        <div className="flex items-center justify-between">
+          <SectionLabel>You get ten of these</SectionLabel>
+          <DataTag kind="DEMO REPLAY" />
+        </div>
+        <div className="rounded-md border border-line bg-raised/60 px-4 pb-1">
+          <HeadlineRow h={sample} index={0} />
+        </div>
+        <p className="text-[13px] leading-relaxed text-muted">
+          Each scenario gets a checkable tripwire, real past events that resemble it, and a place to lock what you will do.
+        </p>
+      </div>
+    </aside>
   );
 }
 

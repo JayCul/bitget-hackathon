@@ -36,7 +36,7 @@ export function Timeline({
           style={{ ["--d" as string]: `${Math.min(i, 10) * 50}ms` }}
           className={`rise group ${
             horizontal
-              ? "relative min-w-[200px] shrink-0 border-t border-line pt-4"
+              ? "relative w-[240px] shrink-0 border-t border-line pt-4"
               : "relative grid grid-cols-[72px_16px_1fr] gap-x-3 pb-6 last:pb-0"
           }`}
         >

@@ -56,6 +56,12 @@ export function useStore(): State {
   );
 }
 
+/** Direct read, for mount-time decisions (the hydration render sees the empty server snapshot). */
+export function peekActiveId(): string | null {
+  load();
+  return state.boards.some((b) => b.id === state.activeId) ? state.activeId : null;
+}
+
 export function useActiveBoard(): Board | null {
   const s = useStore();
   return s.boards.find((b) => b.id === s.activeId) ?? null;

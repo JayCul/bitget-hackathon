@@ -4,7 +4,7 @@ import { Line, LineChart, ReferenceDot, ReferenceLine, ResponsiveContainer, XAxi
 import type { Headline } from "@/lib/prequel/types";
 import type { Fire, Recording } from "@/lib/replay/types";
 
-const fmtDay = (t: number) => new Date(t).toLocaleDateString("en-US", { month: "short", day: "numeric", timeZone: "America/New_York" });
+const fmtDay = (t: number) => new Date(t).toLocaleDateString("en-US", { month: "short", day: "numeric", timeZone: "UTC" });
 
 export function ReplayChart({
   rec,

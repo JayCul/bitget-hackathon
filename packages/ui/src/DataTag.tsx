@@ -14,12 +14,12 @@ export function DataTag({ kind, source, className = "" }: { kind: DataKind; sour
   return (
     <span
       title={source ? `${hints[kind]}. Source: ${source}` : hints[kind]}
-      className={`inline-flex items-center gap-1 rounded-sm border px-1.5 py-px font-mono text-[10px] leading-4 tracking-wider uppercase ${
+      className={`inline-flex max-w-full items-center gap-1 rounded-sm border px-1.5 py-px font-mono text-[10px] leading-4 tracking-wider whitespace-nowrap uppercase ${
         accent ? "border-accent/40 text-accent" : "border-line-strong text-muted"
       } ${className}`}
     >
       {kind}
-      {source ? <span className="normal-case opacity-70">· {source}</span> : null}
+      {source ? <span className="truncate normal-case opacity-70">· {source}</span> : null}
     </span>
   );
 }

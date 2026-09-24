@@ -36,7 +36,7 @@ export default function Landing() {
       <Header />
       <main>
         {/* 1. Hero */}
-        <section className="mx-auto grid max-w-[1240px] items-center gap-12 px-5 pt-16 pb-20 md:px-8 lg:grid-cols-[1.05fr_1fr] lg:pt-24 lg:pb-28">
+        <section className="mx-auto grid max-w-[1240px] items-center gap-12 px-5 pt-16 pb-20 md:px-8 lg:grid-cols-[1.45fr_1fr] lg:pt-24 lg:pb-28">
           <div className="flex flex-col gap-8">
             <SectionLabel>Decision stress testing · US stocks on Bitget</SectionLabel>
             <DisplayHeading lines={["What would change", "your mind?"]} />

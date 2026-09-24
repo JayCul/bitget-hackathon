@@ -143,7 +143,8 @@ function Player({ board, decisions }: { board: Board; decisions: Decision[] }) {
 function Playback({ board, prep, decisions }: { board: Board; prep: Prepared; decisions: Decision[] }) {
   const rec = prep.recording;
   const t0 = startMs(rec);
-  const tEnd = Date.parse(`${rec.end}T23:59:00Z`);
+  // End just past the last day so unfired tripwires read EXPIRED.
+  const tEnd = Date.parse(`${rec.end}T23:59:59.999Z`) + 1;
   const [now, setNow] = useState(t0 - 1);
   const [playing, setPlaying] = useState(false);
   const [speed, setSpeed] = useState(1);
