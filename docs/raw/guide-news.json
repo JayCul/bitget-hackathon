@@ -1,0 +1,54 @@
+{
+  "content": [
+    {
+      "text": "{\"entries\":[{\"id\":\"news_label_search\",\"url_path\":\"news/label_search\",\"subcategory\":\"新闻\",\"title\":\"新闻检索\",\"summary\":\"按标签检索财经新闻\",\"data_tier\":\"free\",\"params_summary\":[{\"name\":\"label\",\"required\":true,\"type\":\"integer\"},{\"name\":\"language_id\",\"required\":false,\"type\":\"integer\"},{\"name\":\"start_time\",\"required\":false,\"type\":\"string\"},{\"name\":\"end_time\",\"required\":false,\"type\":\"string\"},{\"name\":\"page\",\"required\":false,\"type\":\"integer\"},{\"name\":\"page_size\",\"required\":false,\"type\":\"integer\"}],\"docs_url\":\"/docs/news\"}]}",
+      "type": "text"
+    }
+  ],
+  "isError": false,
+  "structuredContent": {
+    "entries": [
+      {
+        "id": "news_label_search",
+        "url_path": "news/label_search",
+        "subcategory": "新闻",
+        "title": "新闻检索",
+        "summary": "按标签检索财经新闻",
+        "data_tier": "free",
+        "params_summary": [
+          {
+            "name": "label",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "name": "language_id",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "name": "start_time",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "end_time",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "page",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "name": "page_size",
+            "required": false,
+            "type": "integer"
+          }
+        ],
+        "docs_url": "/docs/news"
+      }
+    ]
+  }
+}

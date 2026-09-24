@@ -1,0 +1,44 @@
+{
+  "content": [
+    {
+      "text": "{\"entries\":[{\"id\":\"crypto_sentiment_crypto_fear_greed\",\"url_path\":\"crypto/sentiment/crypto_fear_greed\",\"subcategory\":\"情绪\",\"title\":\"加密恐慌贪婪指数\",\"summary\":\"获取加密货币市场的恐慌贪婪指数\",\"data_tier\":\"free\",\"params_summary\":[{\"name\":\"limit\",\"required\":false,\"type\":\"integer\"},{\"name\":\"interval\",\"required\":false,\"type\":\"string\"}],\"docs_url\":\"/docs/sentiment\"},{\"id\":\"sentiment_market_fear_greed\",\"url_path\":\"sentiment/market_fear_greed\",\"subcategory\":\"情绪\",\"title\":\"市场情绪指数\",\"summary\":\"获取整体市场的恐慌贪婪情绪指数\",\"data_tier\":\"free\",\"params_summary\":[],\"docs_url\":\"/docs/sentiment\"}]}",
+      "type": "text"
+    }
+  ],
+  "isError": false,
+  "structuredContent": {
+    "entries": [
+      {
+        "id": "crypto_sentiment_crypto_fear_greed",
+        "url_path": "crypto/sentiment/crypto_fear_greed",
+        "subcategory": "情绪",
+        "title": "加密恐慌贪婪指数",
+        "summary": "获取加密货币市场的恐慌贪婪指数",
+        "data_tier": "free",
+        "params_summary": [
+          {
+            "name": "limit",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "name": "interval",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "docs_url": "/docs/sentiment"
+      },
+      {
+        "id": "sentiment_market_fear_greed",
+        "url_path": "sentiment/market_fear_greed",
+        "subcategory": "情绪",
+        "title": "市场情绪指数",
+        "summary": "获取整体市场的恐慌贪婪情绪指数",
+        "data_tier": "free",
+        "params_summary": [],
+        "docs_url": "/docs/sentiment"
+      }
+    ]
+  }
+}

@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <title>BitShare 金融量化数据</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+  <header>
+    <a href="/docs" class="brand">BitShare 金融量化数据 API 文档</a>
+  </header>
+  <div class="layout">
+    <nav class="sidebar">
+      
+      <details class="nav-group" >
+        <summary class="nav-category">
+          <a href="/docs/crypto">加密货币</a>
+        </summary>
+        <ul class="nav-entries">
+          
+          
+          <li>
+            <details class="nav-subgroup" >
+              <summary class="nav-subcategory">交易市场</summary>
+              <ul class="nav-entries">
+                
+                <li><a href="/docs/crypto/crypto_market">可交易市场列表</a></li>
+                
+                <li><a href="/docs/crypto/crypto_coin_info">代币基本信息</a></li>
+                
+              </ul>
+            </details>
+          </li>
+          
+          
+          
+          <li>
+            <details class="nav-subgroup" >
+              <summary class="nav-subcategory">现货行情</summary>
+              <ul class="nav-entries">
+                
+                <li><a href="/docs/crypto/crypto_spot_kline">现货历史K线</a></li>
+                
+                <li><a href="/docs/crypto/crypto_spot_ticker">现货 ticker</a></li>
+                
+                <li><a href="/docs/crypto/crypto_spot_order_book">现货订单簿</a></li>
+                
+                <li><a href="/docs/crypto/crypto_spot_trades">现货最近成交</a></li>
+                
+                <li><a href="/docs/crypto/crypto_spot_taker_volume">现货主动买卖</a></li>
+                
+                <li><a href="/docs/crypto/crypto_spot_big_trades">现货大单明细</a></li>
+                
+              </ul>
+            </details>
+          </li>
+          
+          
+          
+          <li>
+            <details class="nav-subgroup" >
+              <summary class="nav-subcategory">合约行情</summary>
+              <ul class="nav-entries">
+                
+                <li><a href="/docs/crypto/crypto_futures_mark_price">永续合约标记价格</a></li>
+                
+                <li><a href="/docs/crypto/crypto_futures_kline">合约历史K线</a></li>
+                
+                <li><a href="/docs/crypto/crypto_futures_ticker">合约 ticker</a></li>
+                
+                <li><a href="/docs/crypto/crypto_futures_order_book">合约订单簿</a></li>
+                
+                <li><a href="/docs/crypto/crypto_futures_trades">合约最近成交记录</a></li>
+                
+                <li><a href="/docs/crypto/crypto_futures_funding_rate">合约资金费率</a></li>
+                
+                <li><a href="/docs/crypto/crypto_futures_open_interest">合约持仓</a></li>
+                
+                <li><a href="/docs/crypto/crypto_futures_open_interest_history">合约持仓历史</a></li>
+                
+                <li><a href="/docs/crypto/crypto_futures_long_short_ratio">合约所有账户仓位多空比</a></li>
+                
+                <li><a href="/docs/crypto/crypto_futures_long_short_top_account_ratio">合约大户账户数量多空比</a></li>
+                
+                <li><a href="/docs/crypto/crypto_futures_long_short_top_position_ratio">合约大户仓位多空比</a></li>
+                
+                <li><a href="/docs/crypto/crypto_futures_taker_volume">合约主动买卖</a></li>
+                
+                <li><a href="/docs/crypto/crypto_futures_liquidations">合约清算</a></li>
+                
+                <li><a href="/docs/crypto/crypto_futures_big_trades">合约大单明细</a></li>
+                
+              </ul>
+            </details>
+          </li>
+          
+          
+          
+          <li>
+            <details class="nav-subgroup" >
+              <summary class="nav-subcategory">链上数据</summary>
+              <ul class="nav-entries">
+                
+                <li><a href="/docs/crypto/crypto_onchain_fund_flow">链上资金流向</a></li>
+                
+                <li><a href="/docs/crypto/crypto_onchain_trading_signal">链上买卖信号</a></li>
+                
+                <li><a href="/docs/crypto/crypto_onchain_exchange_flows">交易所流入流出</a></li>
+                
+                <li><a href="/docs/crypto/crypto_onchain_stablecoin_flow">稳定币变化</a></li>
+                
+                <li><a href="/docs/crypto/crypto_onchain_token_unlock_event">代币解锁事件</a></li>
+                
+              </ul>
+            </details>
+          </li>
+          
+          
+          
+          <li>
+            <details class="nav-subgroup" >
+              <summary class="nav-subcategory">机构资金流</summary>
+              <ul class="nav-entries">
+                
+                <li><a href="/docs/crypto/crypto_institutional_company_flow">公司持仓及流入流出</a></li>
+                
+                <li><a href="/docs/crypto/crypto_etf_flows">ETF 流入流出</a></li>
+                
+                <li><a href="/docs/crypto/crypto_institutional_mining_company_flow">挖矿公司比特币持仓流入流出</a></li>
+                
+                <li><a href="/docs/crypto/crypto_institutional_country_flow">国家比特币持仓及流入流出</a></li>
+                
+              </ul>
+            </details>
+          </li>
+          
+          
+          
+          <li>
+            <details class="nav-subgroup" >
+              <summary class="nav-subcategory">指标</summary>
+              <ul class="nav-entries">
+                
+                <li><a href="/docs/crypto/crypto_indicators_technical_indicators">技术指标</a></li>
+                
+              </ul>
+            </details>
+          </li>
+          
+          
+          
+          <li>
+            <details class="nav-subgroup" >
+              <summary class="nav-subcategory">hyperliquid</summary>
+              <ul class="nav-entries">
+                
+                <li><a href="/docs/crypto/crypto_hyperliquid_position_distribution_by_balance_tag">Hyperliquid 多空分布（按余额打标）</a></li>
+                
+                <li><a href="/docs/crypto/crypto_hyperliquid_position_distribution_by_pnl_tag">Hyperliquid 多空分布（按盈亏打标）</a></li>
+                
+                <li><a href="/docs/crypto/crypto_hyperliquid_position_distribution_by_position_tag">Hyperliquid 多空分布（根据仓位大小打标）</a></li>
+                
+                <li><a href="/docs/crypto/crypto_indicators_hyperliquid_whale_sentiment">Hyperliquid 鲸鱼指数</a></li>
+                
+                <li><a href="/docs/crypto/crypto_hyperliquid_whale_alert">Hyperliquid 鲸鱼交易明细</a></li>
+                
+              </ul>
+            </details>
+          </li>
+          
+          
+          
+          
+          <li><a href="/docs/crypto/crypto_spot_big_trades_window">现货大单窗口统计</a></li>
+          
+          <li><a href="/docs/crypto/crypto_futures_big_trades_window">合约大单窗口统计</a></li>
+          
+          
+          
+        </ul>
+      </details>
+      
+      <details class="nav-group" open>
+        <summary class="nav-category">
+          <a href="/docs/equity">美股</a>
+        </summary>
+        <ul class="nav-entries">
+          
+          
+          <li>
+            <details class="nav-subgroup" open>
+              <summary class="nav-subcategory">行情</summary>
+              <ul class="nav-entries">
+                
+                <li><a href="/docs/equity/equity_price_quote">股票基本信息 / 实时报价</a></li>
+                
+                <li><a href="/docs/equity/equity_price_historical">股票历史K线</a></li>
+                
+              </ul>
+            </details>
+          </li>
+          
+          
+          
+          <li>
+            <details class="nav-subgroup" >
+              <summary class="nav-subcategory">基本面（含财报）</summary>
+              <ul class="nav-entries">
+                
+                <li><a href="/docs/equity/equity_profile">公司基本信息</a></li>
+                
+                <li><a href="/docs/equity/equity_fundamental_management">管理层基本信息</a></li>
+                
+                <li><a href="/docs/equity/equity_calendar">财报日历</a></li>
+                
+                <li><a href="/docs/equity/equity_fundamental_balance">资产负债表</a></li>
+                
+                <li><a href="/docs/equity/equity_fundamental_income">利润表</a></li>
+                
+                <li><a href="/docs/equity/equity_fundamental_cash">现金流量表</a></li>
+                
+                <li><a href="/docs/equity/equity_fundamental_metrics">财务分析指标</a></li>
+                
+                <li><a href="/docs/equity/equity_fundamental_ratios">估值指标</a></li>
+                
+                <li><a href="/docs/equity/equity_fundamental_dividends">股票分红</a></li>
+                
+              </ul>
+            </details>
+          </li>
+          
+          
+          
+          <li>
+            <details class="nav-subgroup" >
+              <summary class="nav-subcategory">机构持仓</summary>
+              <ul class="nav-entries">
+                
+                <li><a href="/docs/equity/equity_ownership_insider_trading">内部人交易</a></li>
+                
+                <li><a href="/docs/equity/equity_ownership_major_holders">主要股东持股查询</a></li>
+                
+                <li><a href="/docs/equity/equity_ownership_form_13f">机构持仓明细查询</a></li>
+                
+                <li><a href="/docs/equity/equity_ownership_inst_position_detail">机构持仓明细</a></li>
+                
+                <li><a href="/docs/equity/equity_ownership_inst_position_summary">机构持仓汇总</a></li>
+                
+              </ul>
+            </details>
+          </li>
+          
+          
+          
+          <li>
+            <details class="nav-subgroup" >
+              <summary class="nav-subcategory">分析师评级</summary>
+              <ul class="nav-entries">
+                
+                <li><a href="/docs/equity/equity_estimates_price_target">分析师价格预测</a></li>
+                
+                <li><a href="/docs/equity/equity_estimates_forward_pe">分析师前瞻 PE 预测</a></li>
+                
+                <li><a href="/docs/equity/equity_estimates_forward_eps">分析师前瞻 EPS 预测</a></li>
+                
+                <li><a href="/docs/equity/equity_estimates_forward_ebitda">分析师前瞻 EBITDA 预测</a></li>
+                
+                <li><a href="/docs/equity/equity_estimates_forward_sales">分析师前瞻营收预测</a></li>
+                
+                <li><a href="/docs/equity/equity_estimates_consensus">分析师一致预期</a></li>
+                
+              </ul>
+            </details>
+          </li>
+          
+          
+        </ul>
+      </details>
+      
+      <details class="nav-group" >
+        <summary class="nav-category">
+          <a href="/docs/etf">ETF</a>
+        </summary>
+        <ul class="nav-entries">
+          
+          
+          
+          <li><a href="/docs/etf/etf_info">ETF 基本信息</a></li>
+          
+          <li><a href="/docs/etf/etf_holdings">ETF 持仓信息</a></li>
+          
+          <li><a href="/docs/etf/etf_price_performance">ETF 市场表现</a></li>
+          
+          
+          
+        </ul>
+      </details>
+      
+      <details class="nav-group" >
+        <summary class="nav-category">
+          <a href="/docs/news">新闻</a>
+        </summary>
+        <ul class="nav-entries">
+          
+          
+          <li>
+            <details class="nav-subgroup" >
+              <summary class="nav-subcategory">新闻</summary>
+              <ul class="nav-entries">
+                
+                <li><a href="/docs/news/news_label_search">新闻检索</a></li>
+                
+              </ul>
+            </details>
+          </li>
+          
+          
+        </ul>
+      </details>
+      
+      <details class="nav-group" >
+        <summary class="nav-category">
+          <a href="/docs/sentiment">市场情绪</a>
+        </summary>
+        <ul class="nav-entries">
+          
+          
+          <li>
+            <details class="nav-subgroup" >
+              <summary class="nav-subcategory">情绪</summary>
+              <ul class="nav-entries">
+                
+                <li><a href="/docs/sentiment/crypto_sentiment_crypto_fear_greed">加密恐慌贪婪指数</a></li>
+                
+                <li><a href="/docs/sentiment/sentiment_market_fear_greed">市场情绪指数</a></li>
+                
+              </ul>
+            </details>
+          </li>
+          
+          
+        </ul>
+      </details>
+      
+    </nav>
+    <main>
+      
+<p class="breadcrumb"><a href="/docs/equity">美股</a></p>
+
+<section class="entry">
+  <h2>股票基本信息 / 实时报价 <span class="tier tier-free">free</span></h2>
+  <p class="summary">获取美股的实时报价与基本信息</p>
+  <p><code>GET /api/v1/equity/price/quote</code></p>
+
+  <table class="params">
+    <thead>
+      <tr><th>参数</th><th>类型</th><th>必填</th><th>默认值</th><th>说明</th><th>示例</th></tr>
+    </thead>
+    <tbody>
+      
+      <tr>
+        <td>symbol</td>
+        <td>string</td>
+        <td>是</td>
+        <td>-</td>
+        <td>Symbol to get data for.</td>
+        <td>BTCUSDT</td>
+      </tr>
+      
+    </tbody>
+  </table>
+
+  <p></p>
+  <p>更新频率：-</p>
+
+  <h3>请求示例</h3>
+  
+  <pre>curl "https://agent.bitget.com/api/v1/equity/price/quote?symbol=BTCUSDT"</pre>
+
+  
+  <h3>响应字段说明</h3>
+  <table class="params">
+    <thead>
+      <tr><th>字段</th><th>类型</th><th>说明</th></tr>
+    </thead>
+    <tbody>
+      
+      <tr>
+        <td>symbol</td>
+        <td>string</td>
+        <td>Symbol representing the entity requested in the data.</td>
+      </tr>
+      
+      <tr>
+        <td>asset_type</td>
+        <td>string</td>
+        <td>Type of asset - i.e, stock, ETF, etc.</td>
+      </tr>
+      
+      <tr>
+        <td>name</td>
+        <td>string</td>
+        <td>Name of the company or asset.</td>
+      </tr>
+      
+      <tr>
+        <td>exchange</td>
+        <td>string</td>
+        <td>The name or symbol of the venue where the data is from.</td>
+      </tr>
+      
+      <tr>
+        <td>bid</td>
+        <td>number</td>
+        <td>Price of the top bid order.</td>
+      </tr>
+      
+      <tr>
+        <td>bid_size</td>
+        <td>integer</td>
+        <td>This represents the number of round lot orders at the given price. The normal round lot size is 100 shares. A size of 2 means there are 200 shares available at the given price.</td>
+      </tr>
+      
+      <tr>
+        <td>bid_exchange</td>
+        <td>string</td>
+        <td>The specific trading venue where the purchase order was placed.</td>
+      </tr>
+      
+      <tr>
+        <td>ask</td>
+        <td>number</td>
+        <td>Price of the top ask order.</td>
+      </tr>
+      
+      <tr>
+        <td>ask_size</td>
+        <td>integer</td>
+        <td>This represents the number of round lot orders at the given price. The normal round lot size is 100 shares. A size of 2 means there are 200 shares available at the given price.</td>
+      </tr>
+      
+      <tr>
+        <td>ask_exchange</td>
+        <td>string</td>
+        <td>The specific trading venue where the sale order was placed.</td>
+      </tr>
+      
+      <tr>
+        <td>quote_conditions</td>
+        <td>string</td>
+        <td>Conditions or condition codes applicable to the quote.</td>
+      </tr>
+      
+      <tr>
+        <td>quote_indicators</td>
+        <td>string</td>
+        <td>Indicators or indicator codes applicable to the participant quote related to the price bands for the issue, or the affect the quote has on the NBBO.</td>
+      </tr>
+      
+      <tr>
+        <td>sales_conditions</td>
+        <td>string</td>
+        <td>Conditions or condition codes applicable to the sale.</td>
+      </tr>
+      
+      <tr>
+        <td>sequence_number</td>
+        <td>integer</td>
+        <td>The sequence number represents the sequence in which message events happened. These are increasing and unique per ticker symbol, but will not always be sequential (e.g., 1, 2, 6, 9, 10, 11).</td>
+      </tr>
+      
+      <tr>
+        <td>market_center</td>
+        <td>string</td>
+        <td>The ID of the UTP participant that originated the message.</td>
+      </tr>
+      
+      <tr>
+        <td>participant_timestamp</td>
+        <td>string</td>
+        <td>Timestamp for when the quote was generated by the exchange.</td>
+      </tr>
+      
+      <tr>
+        <td>trf_timestamp</td>
+        <td>string</td>
+        <td>Timestamp for when the TRF (Trade Reporting Facility) received the message.</td>
+      </tr>
+      
+      <tr>
+        <td>sip_timestamp</td>
+        <td>string</td>
+        <td>Timestamp for when the SIP (Security Information Processor) received the message from the exchange.</td>
+      </tr>
+      
+      <tr>
+        <td>last_price</td>
+        <td>number</td>
+        <td>Price of the last trade.</td>
+      </tr>
+      
+      <tr>
+        <td>last_tick</td>
+        <td>string</td>
+        <td>Whether the last sale was an up or down tick.</td>
+      </tr>
+      
+      <tr>
+        <td>last_size</td>
+        <td>integer</td>
+        <td>Size of the last trade.</td>
+      </tr>
+      
+      <tr>
+        <td>last_timestamp</td>
+        <td>string</td>
+        <td>Date and Time when the last price was recorded.</td>
+      </tr>
+      
+      <tr>
+        <td>open</td>
+        <td>number</td>
+        <td>The open price.</td>
+      </tr>
+      
+      <tr>
+        <td>high</td>
+        <td>number</td>
+        <td>The high price.</td>
+      </tr>
+      
+      <tr>
+        <td>low</td>
+        <td>number</td>
+        <td>The low price.</td>
+      </tr>
+      
+      <tr>
+        <td>close</td>
+        <td>number</td>
+        <td>The close price.</td>
+      </tr>
+      
+      <tr>
+        <td>volume</td>
+        <td>integer</td>
+        <td>The trading volume.</td>
+      </tr>
+      
+      <tr>
+        <td>exchange_volume</td>
+        <td>integer</td>
+        <td>Volume of shares exchanged during the trading day on the specific exchange.</td>
+      </tr>
+      
+      <tr>
+        <td>prev_close</td>
+        <td>number</td>
+        <td>The previous close price.</td>
+      </tr>
+      
+      <tr>
+        <td>change</td>
+        <td>number</td>
+        <td>Change in price from previous close.</td>
+      </tr>
+      
+      <tr>
+        <td>change_percent</td>
+        <td>number</td>
+        <td>Change in price as a normalized percentage.</td>
+      </tr>
+      
+      <tr>
+        <td>year_high</td>
+        <td>number</td>
+        <td>The one year high (52W High).</td>
+      </tr>
+      
+      <tr>
+        <td>year_low</td>
+        <td>number</td>
+        <td>The one year low (52W Low).</td>
+      </tr>
+      
+      <tr>
+        <td>total_shares</td>
+        <td>number</td>
+        <td>Total shares outstanding (low-frequency, from the stock screener index).</td>
+      </tr>
+      
+      <tr>
+        <td>float_shares</td>
+        <td>number</td>
+        <td>Float (freely tradable) shares outstanding (low-frequency, from the stock screener index).</td>
+      </tr>
+      
+      <tr>
+        <td>total_market_cap</td>
+        <td>number</td>
+        <td>Total market cap = total_shares x last_price, computed in real time.</td>
+      </tr>
+      
+      <tr>
+        <td>float_market_cap</td>
+        <td>number</td>
+        <td>Float market cap = float_shares x last_price, computed in real time.</td>
+      </tr>
+      
+      <tr>
+        <td>pb</td>
+        <td>number</td>
+        <td>Price-to-book ratio = total_market_cap / latest reported shareholders&#39; equity, computed in real time.</td>
+      </tr>
+      
+      <tr>
+        <td>turnover_rate</td>
+        <td>number</td>
+        <td>Turnover rate (%) = volume / float_shares x 100, computed in real time.</td>
+      </tr>
+      
+      <tr>
+        <td>amplitude</td>
+        <td>number</td>
+        <td>Intraday amplitude (%) = (high - low) / prev_close x 100, computed in real time.</td>
+      </tr>
+      
+    </tbody>
+  </table>
+  
+
+  
+  <h3>响应示例</h3>
+  <div class="json-tree" id="response-example-tree"></div>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      renderJsonTree(
+        document.getElementById("response-example-tree"),
+        "{\"results\": [{\"symbol\": \"AAPL\", \"asset_type\": \"stock\", \"name\": \"Apple Inc.\", \"exchange\": \"NASDAQ\", \"bid\": 1.0, \"bid_size\": 1, \"bid_exchange\": \"example\", \"ask\": 1.0, \"ask_size\": 1, \"ask_exchange\": \"example\", \"quote_conditions\": \"example\", \"quote_indicators\": \"example\", \"sales_conditions\": \"example\", \"sequence_number\": 1, \"market_center\": \"example\", \"participant_timestamp\": \"example\", \"trf_timestamp\": \"example\", \"sip_timestamp\": \"example\", \"last_price\": 227.52, \"last_tick\": \"example\", \"last_size\": 1, \"last_timestamp\": \"example\", \"open\": 225.1, \"high\": 228.3, \"low\": 224.8, \"close\": 227.52, \"volume\": 48213500, \"exchange_volume\": 1, \"prev_close\": 225.77, \"change\": 1.75, \"change_percent\": 0.0078, \"year_high\": 237.23, \"year_low\": 164.08, \"total_shares\": 1.0, \"float_shares\": 1.0, \"total_market_cap\": 1.0, \"float_market_cap\": 1.0, \"pb\": 1.0, \"turnover_rate\": 1.0, \"amplitude\": 1.0}]}\n"
+      );
+    });
+  </script>
+  
+</section>
+
+    </main>
+  </div>
+  <script src="/static/json-tree.js"></script>
+</body>
+</html>

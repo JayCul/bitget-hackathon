@@ -1,0 +1,65 @@
+/* Shared design tokens. Import after `@import "tailwindcss";` in each app. */
+@source "./";
+
+@theme {
+  --color-bg: #050505;
+  --color-raised: #0a0a0a;
+  --color-raised-2: #111111;
+  --color-fg: #f2f2f2;
+  --color-muted: #8a8a8a;
+  --color-line: rgba(255, 255, 255, 0.08);
+  --color-line-strong: rgba(255, 255, 255, 0.16);
+  --color-accent: #e8a34a;
+  --color-accent-dim: rgba(232, 163, 74, 0.14);
+  /* Markers only, never fills. */
+  --color-red: #d9574a;
+  --color-green: #4fae7b;
+  /* Prequel's cool tint for branch lines. */
+  --color-cool: #7d8a96;
+
+  --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-geist-mono), ui-monospace, monospace;
+
+  --radius-sm: 4px;
+  --radius-md: 8px;
+
+  --text-display: clamp(3.5rem, 7vw, 6rem);
+  --text-display--line-height: 0.95;
+  --text-display--letter-spacing: -0.03em;
+  --text-title: clamp(2rem, 4vw, 3.5rem);
+  --text-title--line-height: 1;
+  --text-title--letter-spacing: -0.03em;
+}
+
+@layer base {
+  html {
+    background: var(--color-bg);
+    color: var(--color-fg);
+    color-scheme: dark;
+    -webkit-font-smoothing: antialiased;
+  }
+  body {
+    background: var(--color-bg);
+    font-family: var(--font-sans);
+    font-size: 15px;
+    line-height: 1.55;
+  }
+  :focus-visible {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 2px;
+    border-radius: var(--radius-sm);
+  }
+  ::selection {
+    background: var(--color-accent-dim);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

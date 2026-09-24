@@ -1,0 +1,27 @@
+{
+  "content": [
+    {
+      "text": "{\"success\":false,\"status_code\":422,\"data\":{\"detail\":[{\"type\":\"less_than_equal\",\"loc\":[\"query\",\"size\"],\"msg\":\"Input should be less than or equal to 200\",\"input\":500}]},\"error\":null}",
+      "type": "text"
+    }
+  ],
+  "isError": false,
+  "structuredContent": {
+    "success": false,
+    "status_code": 422,
+    "data": {
+      "detail": [
+        {
+          "type": "less_than_equal",
+          "loc": [
+            "query",
+            "size"
+          ],
+          "msg": "Input should be less than or equal to 200",
+          "input": 500
+        }
+      ]
+    },
+    "error": null
+  }
+}
