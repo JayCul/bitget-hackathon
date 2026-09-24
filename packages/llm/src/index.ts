@@ -1,4 +1,4 @@
-// Qwen via DashScope's OpenAI-compatible endpoint. Server-side only.
+// Any OpenAI-compatible endpoint (Groq by default, DashScope works too). Server-side only.
 // The LLM identifies, generates and explains. It never produces a number the UI shows as data.
 import OpenAI from "openai";
 import { z } from "zod";
@@ -26,13 +26,19 @@ function getClient() {
 export type ModelTier = "main" | "fast";
 
 export function modelName(tier: ModelTier = "main") {
-  const main = process.env.LLM_MODEL ?? "qwen-plus";
+  const main = process.env.LLM_MODEL ?? "qwen/qwen3.8-27b";
   return tier === "fast" ? (process.env.LLM_MODEL_FAST ?? main) : main;
 }
 
+/** Qwen3-family models may emit a reasoning block before the answer. */
+function stripThinking(text: string) {
+  return text.replace(/<think>[\s\S]*?<\/think>/g, "").trim();
+}
+
 function extractJson(text: string): unknown {
-  const fenced = text.match(/```(?:json)?\s*([\s\S]*?)```/);
-  const body = (fenced?.[1] ?? text).trim();
+  const clean = stripThinking(text);
+  const fenced = clean.match(/```(?:json)?\s*([\s\S]*?)```/);
+  const body = (fenced?.[1] ?? clean).trim();
   return JSON.parse(body);
 }
 
@@ -89,5 +95,5 @@ export async function explain(opts: { system: string; user: string; tier?: Model
     ],
     temperature: 0.3,
   });
-  return res.choices[0]?.message.content?.trim() ?? "";
+  return stripThinking(res.choices[0]?.message.content ?? "");
 }
