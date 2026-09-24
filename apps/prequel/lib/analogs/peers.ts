@@ -4,7 +4,7 @@ const SEMIS = ["NVDA", "AMD", "AVGO", "MU", "TSM", "QCOM", "ARM", "MRVL", "AMAT"
 const GROUPS: string[][] = [SEMIS];
 
 /** The ticker first, then up to `max - 1` peers from its group. Unknown tickers stand alone. */
-export function universeFor(ticker: string, max = 9): string[] {
+export function universeFor(ticker: string, max = 14): string[] {
   const t = ticker.toUpperCase();
   const group = GROUPS.find((g) => g.includes(t));
   if (!group) return [t];

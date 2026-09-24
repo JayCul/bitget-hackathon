@@ -32,9 +32,6 @@ importers:
       '@desk/ui':
         specifier: workspace:*
         version: link:../../packages/ui
-      '@next/env':
-        specifier: 16.3.6
-        version: 16.3.6
       framer-motion:
         specifier: ^13.4.2
         version: 13.4.2(react-dom@19.3.0(react@19.3.0))(react@19.3.0)
@@ -90,9 +87,6 @@ importers:
       '@desk/ui':
         specifier: workspace:*
         version: link:../../packages/ui
-      '@next/env':
-        specifier: 16.3.6
-        version: 16.3.6
       framer-motion:
         specifier: ^13.4.2
         version: 13.4.2(react-dom@19.3.0(react@19.3.0))(react@19.3.0)
