@@ -1,8 +1,93 @@
 @import "tailwindcss";
 @import "@desk/ui/theme.css";
 
+/* Landed palette on top of the shared tokens. Black and white first; amber only where attention is needed. */
+@theme {
+  --color-fg: #f5f5f5;
+  --color-raised: #0a0a0a;
+  --color-raised-2: #101010;
+  --color-raised-3: #151515;
+  --color-accent-2: #ffb85c;
+  --color-exec: #70d6a3;
+  --font-serif: var(--font-instrument), ui-serif, Georgia, serif;
+  --text-hero: clamp(3.1rem, 8.4vw, 7.4rem);
+  --text-hero--line-height: 0.9;
+  --text-hero--letter-spacing: -0.052em;
+  --text-statement: clamp(2.4rem, 6vw, 5.2rem);
+  --text-statement--line-height: 0.95;
+  --text-statement--letter-spacing: -0.045em;
+  --text-figure: clamp(3.2rem, 13vw, 8.5rem);
+  --text-figure--line-height: 0.9;
+  --text-figure--letter-spacing: -0.06em;
+}
+
+@keyframes draw {
+  from {
+    stroke-dashoffset: var(--len, 1200);
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+@keyframes drift {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+  50% {
+    transform: translate3d(-3%, 2%, 0);
+  }
+}
+@keyframes breathe {
+  0%,
+  100% {
+    opacity: 0.55;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+@utility draw {
+  stroke-dasharray: var(--len, 1200);
+  animation: draw 1.6s cubic-bezier(0.65, 0, 0.35, 1) both;
+  animation-delay: var(--d, 0ms);
+}
+@utility breathe {
+  animation: breathe 5s ease-in-out infinite;
+}
+
+/* Scroll reveal: content is visible by default; the class only adds motion when JS marks it. */
+.reveal {
+  transition:
+    opacity 0.9s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.9s cubic-bezier(0.22, 1, 0.36, 1);
+  transition-delay: var(--d, 0ms);
+}
+.js .reveal:not(.in) {
+  opacity: 0;
+  transform: translateY(24px);
+}
+
+.backdrop-grid {
+  background-image:
+    linear-gradient(to right, rgba(255, 255, 255, 0.028) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.028) 1px, transparent 1px);
+  background-size: 96px 96px;
+  mask-image: radial-gradient(ellipse 80% 60% at 60% 30%, #000 30%, transparent 75%);
+}
+.backdrop-glow {
+  background: radial-gradient(circle at center, rgba(232, 163, 74, 0.1), transparent 62%);
+  animation: drift 40s ease-in-out infinite;
+}
+
 @media (prefers-reduced-motion: reduce) {
-  .hero-pulse {
+  .hero-pulse,
+  .orb-runner {
     display: none;
+  }
+  .js .reveal:not(.in) {
+    opacity: 1;
+    transform: none;
   }
 }

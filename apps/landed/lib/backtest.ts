@@ -19,6 +19,8 @@ export type PeriodResult = {
   priceEffectBps: number;
   priceEffectUsd: number;
   orders: number;
+  rows: { t: number; ticker: string; usd: number; bps: number; regime: string }[];
+  baselineLegs: { ticker: string; usd: number; bps: number; regime: string }[];
 };
 
 export type BacktestResult = {
@@ -85,6 +87,8 @@ export function backtest(
       priceEffectBps: (priceEffectUsd / usd) * 1e4,
       priceEffectUsd,
       orders: plan.rows.length,
+      rows: plan.rows.map((r) => ({ t: r.t, ticker: r.ticker, usd: r.usd, bps: r.bps, regime: r.regime })),
+      baselineLegs: plan.baseline.legs.map((l) => ({ ticker: l.ticker, usd: l.usd, bps: l.bps!, regime: l.regime! })),
     });
   }
   const avg = (f: (p: PeriodResult) => number) => periods.reduce((s, p) => s + f(p), 0) / periods.length;

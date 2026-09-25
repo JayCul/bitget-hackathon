@@ -1,37 +1,34 @@
 "use client";
-// Per-viewer memory of the setup and the last plan. localStorage only, fully guarded.
+// Per-viewer memory of the payday setup and the last confirmed plan. localStorage only, fully guarded.
 import { useSyncExternalStore } from "react";
-import type { Bill } from "./money";
-import type { ExecutionReport, PlanResponse } from "./types";
+import type { ExecutionReport } from "./types";
 
 export type Setup = {
   salaryNgn: number;
+  billsNgn: number;
+  bufferNgn: number;
   ngnPerUsd: number | null;
-  bills: Bill[];
   basket: string[];
   tranchesPerAsset: number;
   windowHours: 24 | 168;
 };
 
-export type State = { setup: Setup; plan: PlanResponse | null; report: ExecutionReport | null };
+export type LastPlan = { input: { windowHours: number; tranchesPerAsset: number; assets: { ticker: string; usd: number }[]; start: number } };
+
+export type State = { setup: Setup; last: LastPlan | null; report: ExecutionReport | null };
 
 export const DEFAULT_SETUP: Setup = {
   salaryNgn: 0,
+  billsNgn: 0,
+  bufferNgn: 0,
   ngnPerUsd: null,
-  bills: [
-    { id: "rent", label: "Rent", ngn: 0 },
-    { id: "transport", label: "Transport", ngn: 0 },
-    { id: "food", label: "Food", ngn: 0 },
-    { id: "family", label: "Family", ngn: 0 },
-    { id: "buffer", label: "Buffer", ngn: 0 },
-  ],
   basket: ["NVDA", "AAPL", "SPY"],
   tranchesPerAsset: 2,
-  windowHours: 24,
+  windowHours: 168,
 };
 
-const KEY = "landed.v1";
-const empty: State = { setup: DEFAULT_SETUP, plan: null, report: null };
+const KEY = "landed.v2";
+const empty: State = { setup: DEFAULT_SETUP, last: null, report: null };
 let state: State = empty;
 let loaded = false;
 const listeners = new Set<() => void>();
@@ -41,9 +38,12 @@ function load() {
   loaded = true;
   try {
     const raw = window.localStorage.getItem(KEY);
-    if (raw) state = { ...empty, ...(JSON.parse(raw) as State) };
+    if (raw) {
+      const s = JSON.parse(raw) as State;
+      state = { ...empty, ...s, setup: { ...DEFAULT_SETUP, ...s.setup } };
+    }
   } catch {
-    // unavailable: stay in memory
+    // storage unavailable: stay in memory
   }
 }
 
@@ -82,9 +82,9 @@ export const landed = {
     load();
     save({ ...state, setup: { ...state.setup, ...patch } });
   },
-  setPlan(plan: PlanResponse | null) {
+  setLast(last: LastPlan | null) {
     load();
-    save({ ...state, plan, report: null });
+    save({ ...state, last });
   },
   setReport(report: ExecutionReport | null) {
     load();

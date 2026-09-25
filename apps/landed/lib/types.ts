@@ -1,5 +1,21 @@
+import type { Level } from "./book";
+import type { CostModel } from "./costs";
 import type { Plan } from "./plan";
 import type { Regime } from "./regime";
+
+export type LiveBook =
+  | { ok: true; at: string; regime: Regime; mid: number; spreadBps: number; depthAsk25Usd: number; asks: Level[]; bids: Level[] }
+  | { ok: false; message: string };
+
+/** Measured inputs for client-side, deterministic planning. */
+export type MarketBundle = {
+  tickers: string[];
+  model: CostModel;
+  /** median hourly range (bps) per market state, from Bitget 1h bars (28 days) */
+  vol: Record<string, Partial<Record<Regime, number>>>;
+  live: Record<string, LiveBook>;
+  generatedAt: string;
+};
 
 export type MicroRow = {
   ticker: string;

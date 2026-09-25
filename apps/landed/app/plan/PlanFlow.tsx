@@ -1,36 +1,29 @@
 "use client";
-import { useEffect, useState } from "react";
-import { PlanView } from "@/components/PlanView";
-import { AlertCard, SetupFlow } from "@/components/Setup";
-import type { PlanResponse } from "@/lib/types";
-import { landed, peek, useLanded } from "@/lib/store";
-
-type View = "alert" | "setup" | "plan";
+import { useState } from "react";
+import { PlanStage } from "@/components/PlanStage";
+import { SetupSequence, investableOf } from "@/components/SetupSequence";
+import { SystemLabel } from "@/components/system";
+import { allocate } from "@/lib/money";
+import type { PlanInput } from "@/lib/plan";
+import { peek } from "@/lib/store";
+import type { MarketBundle } from "@/lib/types";
 
 export function PlanFlow() {
-  const { plan } = useLanded();
-  const [view, setView] = useState<View>("alert");
+  const [ready, setReady] = useState<{ bundle: MarketBundle; base: PlanInput } | null>(null);
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
-  // Returning visitors land on their last plan.
-  useEffect(() => {
-    if (peek().plan) setView("plan");
-  }, []);
-
-  async function build(windowHours: number, tranchesPerAsset: number, assets: { ticker: string; usd: number }[]) {
+  async function build() {
+    const s = peek().setup;
+    const usd = investableOf(s).usd;
+    const assets = allocate(usd, s.basket.map((t) => ({ ticker: t, weight: 1 })));
     setBusy(true);
     setError(null);
     try {
-      const res = await fetch("/api/plan", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ windowHours, tranchesPerAsset, assets }),
-      });
-      const body = await res.json();
-      if (!res.ok) throw new Error(body.error ?? res.statusText);
-      landed.setPlan(body as PlanResponse);
-      setView("plan");
+      const res = await fetch(`/api/market?tickers=${s.basket.join(",")}`);
+      const bundle = await res.json();
+      if (!res.ok) throw new Error(bundle.error ?? res.statusText);
+      setReady({ bundle, base: { start: Date.now(), windowHours: s.windowHours, tranchesPerAsset: s.tranchesPerAsset, assets } });
       window.scrollTo({ top: 0 });
     } catch (e) {
       setError(e instanceof Error ? e.message : String(e));
@@ -39,34 +32,13 @@ export function PlanFlow() {
     }
   }
 
-  if (view === "plan" && plan) {
-    return (
-      <PlanView
-        key={plan.generatedAt}
-        data={plan}
-        onReset={() => {
-          landed.setPlan(null);
-          setView("setup");
-        }}
-      />
-    );
-  }
-  if (view === "alert") {
-    return (
-      <AlertCard
-        onPlan={(ngn) => {
-          if (!peek().setup.salaryNgn) landed.setSetup({ salaryNgn: ngn });
-          setView("setup");
-        }}
-      />
-    );
-  }
+  if (ready) return <PlanStage bundle={ready.bundle} base={ready.base} onRestart={() => setReady(null)} />;
   return (
     <>
-      <SetupFlow busy={busy} onDone={(s, assets) => build(s.windowHours, s.tranchesPerAsset, assets)} />
+      <SetupSequence busy={busy} onBuild={build} />
       {error ? (
-        <p role="alert" className="mt-4 text-sm text-red">
-          {error}
+        <p role="alert" className="mt-6 font-mono text-sm text-red">
+          <SystemLabel className="!text-red">Market data unavailable</SystemLabel> {error}
         </p>
       ) : null}
     </>

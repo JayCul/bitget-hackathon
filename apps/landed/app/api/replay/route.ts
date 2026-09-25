@@ -31,8 +31,16 @@ export async function POST(req: Request) {
   const failures = input.assets.flatMap((a, i) => (bars[i]!.failure ? [{ ticker: a.ticker, message: bars[i]!.failure! }] : []));
 
   const result = backtest(input, starts, costFn(model), barsBy);
+  // Measured median spread per asset and market state, so the page can split out spread cost.
+  const spreads = Object.fromEntries(
+    input.assets.map((a) => [
+      a.ticker,
+      Object.fromEntries(Object.entries(model.assets[a.ticker] ?? {}).map(([r, st]) => [r, st!.spreadBps])),
+    ]),
+  );
   return Response.json({
     ...result,
+    spreads,
     failures,
     model: { samples: model.samples, from: model.from, to: model.to },
     input: { ...input, anchor, periods },

@@ -70,7 +70,7 @@ async function shot(name, full = false) {
 await send("Page.enable");
 await send("Runtime.enable");
 
-const steps = JSON.parse(process.env.SHOTS ?? "[]");
+const steps = JSON.parse(process.env.SHOTS_FILE ? (await import("node:fs")).readFileSync(process.env.SHOTS_FILE, "utf8") : (process.env.SHOTS ?? "[]"));
 for (const s of steps) {
   if (s.size) await size(s.size[0], s.size[1]);
   if (s.go) await go(s.go);
