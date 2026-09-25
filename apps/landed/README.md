@@ -6,6 +6,8 @@ Landed turns one payday allocation into a liquidity-aware execution plan for Bit
 
 Built by Justin Nnaka, Master's student at Miva Open University.
 
+Live: https://landed-bitget.vercel.app · Demo video: https://youtu.be/PC2k0zH3MRs
+
 ## The problem
 
 Salaried investors in emerging markets buy their whole allocation in one order, the moment the credit alert lands. For a Lagos payday that is usually 08:00 to 10:00 WAT: 03:00 to 05:00 in New York, when the US market is closed. rTokens trade 24/7, but market makers can only hedge while the underlying trades, so spreads widen and books thin outside US hours. Nobody shows the investor that cost, or a better schedule.

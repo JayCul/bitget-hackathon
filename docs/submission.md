@@ -56,6 +56,7 @@ Miva Open University
 **Project name:** Landed
 **Live demo:** https://landed-bitget.vercel.app
 **Code:** https://github.com/JayCul/bitget-hackathon (apps/landed)
+**Demo video:** https://youtu.be/PC2k0zH3MRs
 
 ### Project Description
 
