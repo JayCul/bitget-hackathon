@@ -4,15 +4,16 @@ import { useMemo, useState, useEffect } from "react";
 import { bps, usd2, usdCents } from "@/lib/format";
 import { DEMO_PAYDAY } from "@/lib/demo";
 import { makePlan } from "@/lib/insight";
+import { nextPaydayMorning } from "@/lib/payday";
 import type { MarketBundle } from "@/lib/types";
 import { ExecutionTimeline } from "./ExecutionTimeline";
 import { SystemLabel } from "./system";
 
 
 export function DemoPlan({ bundle }: { bundle: MarketBundle }) {
-  // Start from the moment the page is viewed, so the plan is always forward-looking.
+  // A payday alert at the next weekday 09:00 WAT, so the plan is always forward-looking.
   const [start, setStart] = useState<number | null>(null);
-  useEffect(() => setStart(Date.now()), []);
+  useEffect(() => setStart(nextPaydayMorning()), []);
   const usd = (DEMO_PAYDAY.salary - DEMO_PAYDAY.bills - DEMO_PAYDAY.buffer) / DEMO_PAYDAY.rate;
   const plan = useMemo(
     () =>
@@ -20,7 +21,7 @@ export function DemoPlan({ bundle }: { bundle: MarketBundle }) {
         ? null
         : makePlan(bundle, {
             start,
-            windowHours: 168,
+            windowHours: 24,
             tranchesPerAsset: 2,
             assets: bundle.tickers.map((t) => ({ ticker: t, usd: usd / bundle.tickers.length })),
           }),

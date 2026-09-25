@@ -2,6 +2,7 @@
 import { DataTag } from "@desk/ui";
 import { useEffect, useRef, useState, type ReactNode } from "react";
 import { ngnFmt, usd2 } from "@/lib/format";
+import { nextPaydayMorning } from "@/lib/payday";
 import { landed, useLanded, type Setup } from "@/lib/store";
 import { SystemLabel, useCountUp } from "./system";
 
@@ -170,10 +171,27 @@ export function SetupSequence({ onBuild, busy }: { onBuild: () => void; busy: bo
             <PaydayInput label="Salary" value={s.salaryNgn} onChange={(v) => landed.setSetup({ salaryNgn: v })} placeholder="850,000" autoFocus />
             <div className="flex flex-col gap-3 border-b border-white/10 pb-4">
               <SystemLabel>Payday</SystemLabel>
-              <span className="text-[clamp(1.6rem,4vw,2.4rem)] leading-none font-medium tracking-[-0.03em]">
-                Today, {now.toLocaleTimeString("en-GB", { timeZone: "Africa/Lagos", hour: "2-digit", minute: "2-digit" })}
-              </span>
-              <span className="text-xs text-muted">WAT. Your plan starts from now.</span>
+              <div className="flex flex-col gap-2" role="radiogroup" aria-label="When the money lands">
+                {([
+                  ["morning", `${new Date(nextPaydayMorning()).toLocaleDateString("en-GB", { timeZone: "Africa/Lagos", weekday: "long" })}, 09:00`, "When salary alerts usually land"],
+                  ["now", `Right now, ${now.toLocaleTimeString("en-GB", { timeZone: "Africa/Lagos", hour: "2-digit", minute: "2-digit" })}`, "Plan from this minute"],
+                ] as const).map(([v, label, sub]) => (
+                  <button
+                    key={v}
+                    type="button"
+                    role="radio"
+                    aria-checked={s.payday === v}
+                    onClick={() => landed.setSetup({ payday: v })}
+                    className="flex items-baseline justify-between gap-4 text-left"
+                  >
+                    <span className={`text-[clamp(1.3rem,3vw,1.9rem)] leading-tight font-medium tracking-[-0.03em] transition-colors ${s.payday === v ? "text-fg" : "text-muted/50 hover:text-muted"}`}>
+                      {label}
+                    </span>
+                    <span className={`size-2.5 shrink-0 rounded-full border ${s.payday === v ? "border-accent-2 bg-accent" : "border-white/30"}`} />
+                  </button>
+                ))}
+              </div>
+              <span className="text-xs text-muted">WAT. {s.payday === "morning" ? "When salary alerts usually land, before New York opens." : "Your plan starts from this minute."}</span>
             </div>
           </div>
           <div>

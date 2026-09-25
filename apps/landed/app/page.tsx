@@ -221,7 +221,7 @@ export default async function Landing() {
               <div className="flex flex-col gap-4">
                 <SystemLabel accent>A real plan, live</SystemLabel>
                 <h2 id="real" className="text-statement font-medium">
-                  {ngnFmt(DEMO_PAYDAY.salary - DEMO_PAYDAY.bills - DEMO_PAYDAY.buffer)}, <span className="font-serif font-normal text-muted italic">planned this week.</span>
+                  {ngnFmt(DEMO_PAYDAY.salary - DEMO_PAYDAY.bills - DEMO_PAYDAY.buffer)}, <span className="font-serif font-normal text-muted italic">planned for payday.</span>
                 </h2>
               </div>
               <p className="max-w-sm text-sm leading-relaxed text-muted">

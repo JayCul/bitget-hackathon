@@ -174,3 +174,13 @@ describe("money", () => {
     ]);
   });
 });
+
+describe("nextPaydayMorning", () => {
+  it("returns the next weekday 09:00 WAT after now", async () => {
+    const { nextPaydayMorning } = await import("./payday");
+    const iso = (t: number) => new Date(t).toISOString();
+    expect(iso(nextPaydayMorning(at("2026-09-25T06:30:00Z")))).toBe("2026-09-25T08:00:00.000Z"); // Fri before 09:00 WAT
+    expect(iso(nextPaydayMorning(at("2026-09-25T10:00:00Z")))).toBe("2026-09-28T08:00:00.000Z"); // Fri after, skips weekend
+    expect(iso(nextPaydayMorning(at("2026-09-23T09:00:00Z")))).toBe("2026-09-24T08:00:00.000Z");
+  });
+});

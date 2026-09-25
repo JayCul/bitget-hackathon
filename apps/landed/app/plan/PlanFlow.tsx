@@ -5,6 +5,7 @@ import { SetupSequence, investableOf } from "@/components/SetupSequence";
 import { SystemLabel } from "@/components/system";
 import { allocate } from "@/lib/money";
 import type { PlanInput } from "@/lib/plan";
+import { paydayStart } from "@/lib/payday";
 import { peek } from "@/lib/store";
 import type { MarketBundle } from "@/lib/types";
 
@@ -23,7 +24,7 @@ export function PlanFlow() {
       const res = await fetch(`/api/market?tickers=${s.basket.join(",")}`);
       const bundle = await res.json();
       if (!res.ok) throw new Error(bundle.error ?? res.statusText);
-      setReady({ bundle, base: { start: Date.now(), windowHours: s.windowHours, tranchesPerAsset: s.tranchesPerAsset, assets } });
+      setReady({ bundle, base: { start: paydayStart(s.payday), windowHours: s.windowHours, tranchesPerAsset: s.tranchesPerAsset, assets } });
       window.scrollTo({ top: 0 });
     } catch (e) {
       setError(e instanceof Error ? e.message : String(e));

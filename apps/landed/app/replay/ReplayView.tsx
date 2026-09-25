@@ -8,6 +8,7 @@ import type { BacktestResult, PeriodResult } from "@/lib/backtest";
 import { bps, usdCents, wat, watDay } from "@/lib/format";
 import { allocate } from "@/lib/money";
 import { regimeAt, REGIME_LABEL, type Regime } from "@/lib/regime";
+import { paydayStart } from "@/lib/payday";
 import { useLanded } from "@/lib/store";
 
 type Result = BacktestResult & {
@@ -86,14 +87,15 @@ export function ReplayView() {
     let off = false;
     setRes(null);
     setErr(null);
-    fetch("/api/replay", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ ...input, periods: 8 }) })
+    fetch("/api/replay", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ ...input, periods: 8, anchor: paydayStart(setup.payday) }) })
       .then(async (r) => ({ ok: r.ok, body: await r.json() }))
       .then(({ ok, body }) => !off && (ok ? setRes(body) : setErr(body.error ?? "Replay failed")))
       .catch((e) => !off && setErr(String(e)));
     return () => {
       off = true;
     };
-  }, [input, hydrated]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [input, hydrated, setup.payday]);
 
   const stats = useMemo(() => {
     if (!res?.periods.length) return null;

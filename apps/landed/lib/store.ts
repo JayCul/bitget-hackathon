@@ -11,6 +11,8 @@ export type Setup = {
   basket: string[];
   tranchesPerAsset: number;
   windowHours: 24 | 168;
+  /** when the plan starts: now, or the next weekday morning at 09:00 WAT (when salary alerts land) */
+  payday: "now" | "morning";
 };
 
 export type LastPlan = { input: { windowHours: number; tranchesPerAsset: number; assets: { ticker: string; usd: number }[]; start: number } };
@@ -25,6 +27,7 @@ export const DEFAULT_SETUP: Setup = {
   basket: ["NVDA", "AAPL", "SPY"],
   tranchesPerAsset: 2,
   windowHours: 168,
+  payday: "morning",
 };
 
 const KEY = "landed.v2";
