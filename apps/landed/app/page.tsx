@@ -31,7 +31,7 @@ export default async function Landing() {
     <>
       <Header wide />
       <main>
-        <section className="mx-auto grid max-w-[1180px] items-center gap-10 px-4 pt-12 pb-16 md:px-6 lg:grid-cols-[1fr_1fr] lg:pt-20 lg:pb-24">
+        <section className="mx-auto grid max-w-[1180px] items-center gap-10 px-4 pt-12 pb-16 md:px-6 lg:grid-cols-[1.3fr_1fr] lg:pt-20 lg:pb-24">
           <div className="flex flex-col gap-7">
             <Label>Execution assistance · Bitget rTokens</Label>
             <DisplayHeading lines={["Your salary landed.", <span key="2" className="text-accent">Don&apos;t waste the spread.</span>]} size="title" className="md:text-display" />
