@@ -1,2 +1,8 @@
 @import "tailwindcss";
 @import "@desk/ui/theme.css";
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-pulse {
+    display: none;
+  }
+}

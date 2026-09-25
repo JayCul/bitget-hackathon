@@ -11,6 +11,8 @@ try {
 
 const config: NextConfig = {
   transpilePackages: ["@desk/ui", "@desk/bitget", "@desk/llm", "@desk/market-data"],
+  // Sampled order-book data is read from disk at runtime.
+  outputFileTracingIncludes: { "/api/**": ["./data/**/*"] },
 };
 
 export default config;
