@@ -27,7 +27,7 @@ Every figure below is a real output from the repo.
 **Competition Sub-theme:** Decision Stress Testing
 **Project Name:** Prequel
 
-**One-line Project Summary** (121 characters)
+**One-line Project Summary** (117 characters)
 > Stress-tests a trade before you open it: 5 ways it breaks, 5 ways it's confirmed, each tested on real Bitget history.
 
 ### Project Description
@@ -79,7 +79,7 @@ All numbers (returns, counts, medians, balance, conviction, price levels) are co
 **Competition Sub-theme:** Execution Assistance
 **Project Name:** Landed
 
-**One-line Project Summary** (113 characters)
+**One-line Project Summary** (109 characters)
 > Plans your payday rToken buys on measured Bitget order books, so you stop overpaying for spread and slippage.
 
 ### Project Description
