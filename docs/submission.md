@@ -61,6 +61,7 @@ Run records:
 - Full pipeline output for the demo thesis (headlines, analogs, outcomes): https://github.com/JayCul/bitget-hackathon/blob/main/apps/prequel/data/demo/board.json
 - Verified Bitget API notes: https://github.com/JayCul/bitget-hackathon/blob/main/docs/tools.md
 Demo video: https://youtu.be/UeaHtyQtUbI
+Note: if Bitget's data API is unavailable (it returned 503 from 25 Sep), open Replay and choose "Load the NVDA demo thesis". The demo board and replay run on recorded Bitget data.
 ```
 
 ### Role of the LLM/AI
@@ -113,6 +114,7 @@ Run records:
 - Simulated execution log: https://github.com/JayCul/bitget-hackathon/blob/main/docs/run-records/landed-sim.jsonl
 - Sampler: https://github.com/JayCul/bitget-hackathon/blob/main/scripts/sample-spreads.mjs
 Demo video: https://youtu.be/PC2k0zH3MRs
+Note: if Bitget's data API is unavailable (it returned 503 from 25 Sep), plans are still built from the recorded order-book samples; only the live spread readouts show as unavailable.
 ```
 
 ### Role of the LLM/AI
