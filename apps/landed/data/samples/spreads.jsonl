@@ -106,3 +106,513 @@
 {"t":1790318036540,"symbol":"RQQQ/USDT","bookTs":"2026-09-25T06:34:08.549000Z","bid":744.33,"ask":744.62,"spreadBps":3.895362503777341,"tickerBid":744.31,"tickerAsk":744.39,"depthAsk25Usd":155917,"depthBid25Usd":154979,"buyCostBps":{"500":1.9476812518886706,"2000":1.9476812518886706,"10000":1.9476812518886706}}
 {"t":1790318036540,"symbol":"RTSLA/USDT","bookTs":"2026-09-25T06:34:09.788000Z","bid":380.14,"ask":380.21,"spreadBps":1.8412573157096912,"tickerBid":380.06,"tickerAsk":380.1,"depthAsk25Usd":111463,"depthBid25Usd":177281,"buyCostBps":{"500":1.393494984174569,"2000":2.212185812934072,"10000":2.4415152194136422}}
 {"t":1790318036540,"symbol":"RMSFT/USDT","bookTs":"2026-09-25T06:34:10.878000Z","bid":497.39,"ask":497.8,"spreadBps":8.239632632965062,"tickerBid":497.36,"tickerAsk":497.44,"depthAsk25Usd":195797,"depthBid25Usd":88694,"buyCostBps":{"500":4.119816316481959,"2000":4.119816316481959,"10000":4.119816316481959}}
+{"t":1790318351913,"symbol":"RNVDA/USDT","bookTs":"2026-09-25T06:39:13.221000Z","bid":225.28,"ask":225.47,"spreadBps":8.430393788130791,"tickerBid":225.28,"tickerAsk":225.33,"depthAsk25Usd":292715,"depthBid25Usd":373189,"buyCostBps":{"500":4.215196894066658,"2000":4.215196894066658,"10000":4.215196894064135}}
+{"t":1790318351913,"symbol":"RAAPL/USDT","bookTs":"2026-09-25T06:39:15.338000Z","bid":335.61,"ask":335.78,"spreadBps":5.0641207048052275,"tickerBid":335.61,"tickerAsk":335.8,"depthAsk25Usd":4687,"depthBid25Usd":2213,"buyCostBps":{"500":3.3300277186862135,"2000":7.167691560103874,"10000":24.509891528098304}}
+{"t":1790318351913,"symbol":"RSPY/USDT","bookTs":"2026-09-25T06:39:16.558000Z","bid":768.43,"ask":768.89,"spreadBps":5.984440454817948,"tickerBid":768.59,"tickerAsk":768.68,"depthAsk25Usd":165758,"depthBid25Usd":209887,"buyCostBps":{"500":2.992220227408974,"2000":2.992220227408974,"10000":2.992220227408974}}
+{"t":1790318351913,"symbol":"RQQQ/USDT","bookTs":"2026-09-25T06:39:18.371000Z","bid":744.2,"ask":744.65,"spreadBps":6.044934009469481,"tickerBid":744.32,"tickerAsk":744.4,"depthAsk25Usd":180640,"depthBid25Usd":242343,"buyCostBps":{"500":3.0224670047355042,"2000":3.0224670047355042,"10000":3.0224670047355042}}
+{"t":1790318351913,"symbol":"RTSLA/USDT","bookTs":"2026-09-25T06:39:19.906000Z","bid":380.2,"ask":380.21,"spreadBps":0.26301600452363605,"tickerBid":380.2,"tickerAsk":380.27,"depthAsk25Usd":154732,"depthBid25Usd":146906,"buyCostBps":{"500":0.6043370171572472,"2000":3.865538327557233,"10000":5.086532882275113}}
+{"t":1790318351913,"symbol":"RMSFT/USDT","bookTs":"2026-09-25T06:39:21.034000Z","bid":497.28,"ask":497.84,"spreadBps":11.254924029262849,"tickerBid":497.36,"tickerAsk":497.75,"depthAsk25Usd":168767,"depthBid25Usd":92488,"buyCostBps":{"500":5.627462014630854,"2000":5.627462014630854,"10000":5.627462014631996}}
+{"t":1790318661483,"symbol":"RNVDA/USDT","error":"fetch failed"}
+{"t":1790318661483,"symbol":"RAAPL/USDT","error":"fetch failed"}
+{"t":1790318661483,"symbol":"RSPY/USDT","error":"fetch failed"}
+{"t":1790318661483,"symbol":"RQQQ/USDT","error":"fetch failed"}
+{"t":1790318661483,"symbol":"RTSLA/USDT","error":"fetch failed"}
+{"t":1790318661483,"symbol":"RMSFT/USDT","error":"fetch failed"}
+{"t":1790319062397,"symbol":"RNVDA/USDT","error":"fetch failed"}
+{"t":1790319062397,"symbol":"RAAPL/USDT","error":"fetch failed"}
+{"t":1790319062397,"symbol":"RSPY/USDT","error":"fetch failed"}
+{"t":1790319062397,"symbol":"RQQQ/USDT","error":"fetch failed"}
+{"t":1790319062397,"symbol":"RTSLA/USDT","error":"fetch failed"}
+{"t":1790319062397,"symbol":"RMSFT/USDT","error":"fetch failed"}
+{"t":1790319462847,"symbol":"RNVDA/USDT","error":"fetch failed"}
+{"t":1790319462847,"symbol":"RAAPL/USDT","error":"fetch failed"}
+{"t":1790319462847,"symbol":"RSPY/USDT","error":"fetch failed"}
+{"t":1790319462847,"symbol":"RQQQ/USDT","error":"fetch failed"}
+{"t":1790319462847,"symbol":"RTSLA/USDT","error":"fetch failed"}
+{"t":1790319462847,"symbol":"RMSFT/USDT","error":"fetch failed"}
+{"t":1790319883138,"symbol":"RNVDA/USDT","error":"fetch failed"}
+{"t":1790319883138,"symbol":"RAAPL/USDT","error":"fetch failed"}
+{"t":1790319883138,"symbol":"RSPY/USDT","error":"fetch failed"}
+{"t":1790319883138,"symbol":"RQQQ/USDT","error":"fetch failed"}
+{"t":1790319883138,"symbol":"RTSLA/USDT","error":"fetch failed"}
+{"t":1790319883138,"symbol":"RMSFT/USDT","error":"fetch failed"}
+{"t":1790320303484,"symbol":"RNVDA/USDT","error":"fetch failed"}
+{"t":1790320303484,"symbol":"RAAPL/USDT","error":"fetch failed"}
+{"t":1790320303484,"symbol":"RSPY/USDT","error":"fetch failed"}
+{"t":1790320303484,"symbol":"RQQQ/USDT","error":"fetch failed"}
+{"t":1790320303484,"symbol":"RTSLA/USDT","error":"fetch failed"}
+{"t":1790320303484,"symbol":"RMSFT/USDT","error":"fetch failed"}
+{"t":1790320723791,"symbol":"RNVDA/USDT","error":"fetch failed"}
+{"t":1790320723791,"symbol":"RAAPL/USDT","error":"fetch failed"}
+{"t":1790320723791,"symbol":"RSPY/USDT","error":"fetch failed"}
+{"t":1790320723791,"symbol":"RQQQ/USDT","error":"fetch failed"}
+{"t":1790320723791,"symbol":"RTSLA/USDT","error":"fetch failed"}
+{"t":1790320723791,"symbol":"RMSFT/USDT","error":"fetch failed"}
+{"t":1790321144054,"symbol":"RNVDA/USDT","error":"empty"}
+{"t":1790321144054,"symbol":"RAAPL/USDT","bookTs":"2026-09-25T07:25:48.123000Z","bid":335.87,"ask":336.07,"spreadBps":5.952912462421901,"tickerBid":335.91,"tickerAsk":335.99,"depthAsk25Usd":13601,"depthBid25Usd":4242,"buyCostBps":{"500":3.0842033038153756,"2000":5.835578402967514,"10000":19.301772978357192}}
+{"t":1790321144054,"symbol":"RSPY/USDT","bookTs":"2026-09-25T07:25:48.928000Z","bid":768.66,"ask":769.06,"spreadBps":5.202507608667083,"tickerBid":768.69,"tickerAsk":768.76,"depthAsk25Usd":231297,"depthBid25Usd":124684,"buyCostBps":{"500":2.6012538043342808,"2000":2.6012538043342808,"10000":2.6012538043342808}}
+{"t":1790321144054,"symbol":"RQQQ/USDT","bookTs":"2026-09-25T07:25:49.801000Z","bid":744.32,"ask":745.56,"spreadBps":16.6456358901374,"tickerBid":744.27,"tickerAsk":744.34,"depthAsk25Usd":127614,"depthBid25Usd":196155,"buyCostBps":{"500":8.322817945067936,"2000":8.322817945067936,"10000":8.322817945067936}}
+{"t":1790321144054,"symbol":"RTSLA/USDT","bookTs":"2026-09-25T07:25:50.558000Z","bid":381.18,"ask":381.2,"spreadBps":0.5246727353808287,"tickerBid":381.06,"tickerAsk":381.18,"depthAsk25Usd":184681,"depthBid25Usd":261444,"buyCostBps":{"500":2.7120444023420256,"2000":4.02274253734527,"10000":4.3723200541520875}}
+{"t":1790321144054,"symbol":"RMSFT/USDT","bookTs":"2026-09-25T07:25:51.433000Z","bid":497.19,"ask":497.43,"spreadBps":4.825963684623456,"tickerBid":497.23,"tickerAsk":497.27,"depthAsk25Usd":91854,"depthBid25Usd":82763,"buyCostBps":{"500":2.4129818423128713,"2000":2.4129818423128713,"10000":2.427649533623495}}
+{"t":1790321452047,"symbol":"RNVDA/USDT","error":"fetch failed"}
+{"t":1790321452047,"symbol":"RAAPL/USDT","error":"fetch failed"}
+{"t":1790321452047,"symbol":"RSPY/USDT","error":"fetch failed"}
+{"t":1790321452047,"symbol":"RQQQ/USDT","error":"fetch failed"}
+{"t":1790321452047,"symbol":"RTSLA/USDT","error":"fetch failed"}
+{"t":1790321452047,"symbol":"RMSFT/USDT","error":"fetch failed"}
+{"t":1790321872396,"symbol":"RNVDA/USDT","error":"empty"}
+{"t":1790321872396,"symbol":"RAAPL/USDT","bookTs":"2026-09-25T07:37:55.454000Z","bid":335.84,"ask":336.11,"spreadBps":8.036312225613175,"tickerBid":335.81,"tickerAsk":335.94,"depthAsk25Usd":13784,"depthBid25Usd":2313,"buyCostBps":{"500":4.43319863138305,"2000":5.957168398176002,"10000":14.071050012276723}}
+{"t":1790321872396,"symbol":"RSPY/USDT","bookTs":"2026-09-25T07:37:56.270000Z","bid":768.28,"ask":768.92,"spreadBps":8.32682799895897,"tickerBid":768.5,"tickerAsk":768.59,"depthAsk25Usd":163040,"depthBid25Usd":129299,"buyCostBps":{"500":4.163413999480224,"2000":4.163413999480224,"10000":4.163413999480224}}
+{"t":1790321872396,"symbol":"RQQQ/USDT","bookTs":"2026-09-25T07:37:57.035000Z","bid":744.12,"ask":744.51,"spreadBps":5.239717055278831,"tickerBid":744.05,"tickerAsk":744.11,"depthAsk25Usd":225253,"depthBid25Usd":222773,"buyCostBps":{"500":2.6198585276386517,"2000":2.6198585276386517,"10000":2.6198585276386517}}
+{"t":1790321872396,"symbol":"RTSLA/USDT","bookTs":"2026-09-25T07:37:57.853000Z","bid":381.05,"ask":381.12,"spreadBps":1.8368605429233156,"tickerBid":380.89,"tickerAsk":381.09,"depthAsk25Usd":180946,"depthBid25Usd":303920,"buyCostBps":{"500":1.4526721492369183,"2000":2.6263967187319457,"10000":2.9394364652216183}}
+{"t":1790321872396,"symbol":"RMSFT/USDT","bookTs":"2026-09-25T07:37:58.440000Z","bid":497.11,"ask":497.71,"spreadBps":12.062483665386019,"tickerBid":497.26,"tickerAsk":497.56,"depthAsk25Usd":96769,"depthBid25Usd":82180,"buyCostBps":{"500":6.0312418326947235,"2000":6.0312418326947235,"10000":6.03124183269358}}
+{"t":1790322179043,"symbol":"RNVDA/USDT","bookTs":"2026-09-25T07:43:00.480000Z","bid":225.18,"ask":225.22,"spreadBps":1.7761989342802862,"tickerBid":225.12,"tickerAsk":225.22,"depthAsk25Usd":270693,"depthBid25Usd":390441,"buyCostBps":{"500":1.5532650837104622,"2000":3.7665861382040426,"10000":4.660934893646656}}
+{"t":1790322179043,"symbol":"RAAPL/USDT","bookTs":"2026-09-25T07:43:01.768000Z","bid":335.9,"ask":336.09,"spreadBps":5.6548460542566925,"tickerBid":335.91,"tickerAsk":335.94,"depthAsk25Usd":11181,"depthBid25Usd":2676,"buyCostBps":{"500":3.298639747893869,"2000":6.286415012923996,"10000":13.540903151387212}}
+{"t":1790322179043,"symbol":"RSPY/USDT","bookTs":"2026-09-25T07:43:02.593000Z","bid":767.74,"ask":769.03,"spreadBps":16.788458910571702,"tickerBid":768.56,"tickerAsk":768.65,"depthAsk25Usd":127567,"depthBid25Usd":168121,"buyCostBps":{"500":8.394229455285851,"2000":8.394229455285851,"10000":8.394229455285851}}
+{"t":1790322179043,"symbol":"RQQQ/USDT","bookTs":"2026-09-25T07:43:05.711000Z","bid":744.03,"ask":744.26,"spreadBps":3.090795476688256,"tickerBid":743.92,"tickerAsk":743.99,"depthAsk25Usd":169715,"depthBid25Usd":226095,"buyCostBps":{"500":1.545397738344128,"2000":1.545397738344128,"10000":1.545397738344128}}
+{"t":1790322179043,"symbol":"RTSLA/USDT","bookTs":"2026-09-25T07:43:07.203000Z","bid":380.86,"ask":380.95,"spreadBps":2.3627938724872344,"tickerBid":380.8,"tickerAsk":380.92,"depthAsk25Usd":193690,"depthBid25Usd":279177,"buyCostBps":{"500":2.0231626908614935,"2000":3.3607736379421485,"10000":3.7175303157298982}}
+{"t":1790322179043,"symbol":"RMSFT/USDT","bookTs":"2026-09-25T07:43:07.967000Z","bid":497.26,"ask":497.71,"spreadBps":9.04549885926186,"tickerBid":497.25,"tickerAsk":497.5,"depthAsk25Usd":89966,"depthBid25Usd":67410,"buyCostBps":{"500":4.522749429631501,"2000":4.522749429631501,"10000":4.522749429630358}}
+{"t":1790322488559,"symbol":"RNVDA/USDT","bookTs":"2026-09-25T07:48:09.500000Z","bid":225.18,"ask":225.22,"spreadBps":1.7761989342802862,"tickerBid":225.17,"tickerAsk":225.26,"depthAsk25Usd":275032,"depthBid25Usd":379433,"buyCostBps":{"500":1.5532650837104622,"2000":4.908466324944373,"10000":6.310240965905486}}
+{"t":1790322488559,"symbol":"RAAPL/USDT","bookTs":"2026-09-25T07:48:11.243000Z","bid":335.89,"ask":336.13,"spreadBps":7.142644564150148,"tickerBid":335.94,"tickerAsk":335.95,"depthAsk25Usd":9177,"depthBid25Usd":5151,"buyCostBps":{"500":4.530048987382537,"2000":11.340040776160189,"10000":20.807904452825134}}
+{"t":1790322488559,"symbol":"RSPY/USDT","bookTs":"2026-09-25T07:48:12.915000Z","bid":768.59,"ask":769.02,"spreadBps":5.593095778512756,"tickerBid":768.61,"tickerAsk":768.71,"depthAsk25Usd":209754,"depthBid25Usd":123729,"buyCostBps":{"500":2.796547889255639,"2000":2.796547889255639,"10000":2.796547889255639}}
+{"t":1790322488559,"symbol":"RQQQ/USDT","bookTs":"2026-09-25T07:48:17.594000Z","bid":743.27,"ask":744.42,"spreadBps":15.460210124420776,"tickerBid":744.01,"tickerAsk":744.06,"depthAsk25Usd":121000,"depthBid25Usd":163149,"buyCostBps":{"500":7.730105062209623,"2000":7.730105062209623,"10000":7.730105062209623}}
+{"t":1790322488559,"symbol":"RTSLA/USDT","bookTs":"2026-09-25T07:48:18.449000Z","bid":380.99,"ask":381.05,"spreadBps":1.5747204871135971,"tickerBid":380.87,"tickerAsk":380.99,"depthAsk25Usd":103438,"depthBid25Usd":259257,"buyCostBps":{"500":1.074241505646526,"2000":2.8234282864597886,"10000":3.294195629239281}}
+{"t":1790322488559,"symbol":"RMSFT/USDT","bookTs":"2026-09-25T07:48:20.263000Z","bid":496.47,"ask":497.7,"spreadBps":24.74425903014497,"tickerBid":497.26,"tickerAsk":497.57,"depthAsk25Usd":97020,"depthBid25Usd":64392,"buyCostBps":{"500":12.372129515073057,"2000":12.372129515073057,"10000":12.372129515071913}}
+{"t":1790322800821,"symbol":"RNVDA/USDT","error":"fetch failed"}
+{"t":1790322800821,"symbol":"RAAPL/USDT","error":"fetch failed"}
+{"t":1790322800821,"symbol":"RSPY/USDT","error":"fetch failed"}
+{"t":1790322800821,"symbol":"RQQQ/USDT","error":"fetch failed"}
+{"t":1790322800821,"symbol":"RTSLA/USDT","error":"fetch failed"}
+{"t":1790322800821,"symbol":"RMSFT/USDT","error":"fetch failed"}
+{"t":1790323201758,"symbol":"RNVDA/USDT","error":"empty"}
+{"t":1790323201758,"symbol":"RAAPL/USDT","error":"fetch failed"}
+{"t":1790323201758,"symbol":"RSPY/USDT","error":"fetch failed"}
+{"t":1790323201758,"symbol":"RQQQ/USDT","error":"fetch failed"}
+{"t":1790323201758,"symbol":"RTSLA/USDT","error":"fetch failed"}
+{"t":1790323201758,"symbol":"RMSFT/USDT","error":"fetch failed"}
+{"t":1790323521950,"symbol":"RNVDA/USDT","error":"fetch failed"}
+{"t":1790323521950,"symbol":"RAAPL/USDT","error":"fetch failed"}
+{"t":1790323521950,"symbol":"RSPY/USDT","error":"fetch failed"}
+{"t":1790323521950,"symbol":"RQQQ/USDT","error":"fetch failed"}
+{"t":1790323521950,"symbol":"RTSLA/USDT","error":"fetch failed"}
+{"t":1790323521950,"symbol":"RMSFT/USDT","error":"fetch failed"}
+{"t":1790323821985,"symbol":"RNVDA/USDT","error":"empty"}
+{"t":1790323821985,"symbol":"RAAPL/USDT","error":"empty"}
+{"t":1790323821985,"symbol":"RSPY/USDT","error":"empty"}
+{"t":1790323821985,"symbol":"RQQQ/USDT","error":"empty"}
+{"t":1790323821985,"symbol":"RTSLA/USDT","error":"empty"}
+{"t":1790323821985,"symbol":"RMSFT/USDT","error":"empty"}
+{"t":1790324132544,"symbol":"RNVDA/USDT","error":"empty"}
+{"t":1790324132544,"symbol":"RAAPL/USDT","error":"empty"}
+{"t":1790324132544,"symbol":"RSPY/USDT","error":"empty"}
+{"t":1790324132544,"symbol":"RQQQ/USDT","error":"empty"}
+{"t":1790324132544,"symbol":"RTSLA/USDT","error":"empty"}
+{"t":1790324132544,"symbol":"RMSFT/USDT","error":"empty"}
+{"t":1790324442886,"symbol":"RNVDA/USDT","error":"fetch failed"}
+{"t":1790324442886,"symbol":"RAAPL/USDT","error":"fetch failed"}
+{"t":1790324442886,"symbol":"RSPY/USDT","error":"fetch failed"}
+{"t":1790324442886,"symbol":"RQQQ/USDT","error":"fetch failed"}
+{"t":1790324442886,"symbol":"RTSLA/USDT","error":"fetch failed"}
+{"t":1790324442886,"symbol":"RMSFT/USDT","error":"fetch failed"}
+{"t":1790324843505,"symbol":"RNVDA/USDT","error":"empty"}
+{"t":1790324843505,"symbol":"RAAPL/USDT","error":"empty"}
+{"t":1790324843505,"symbol":"RSPY/USDT","error":"empty"}
+{"t":1790324843505,"symbol":"RQQQ/USDT","error":"empty"}
+{"t":1790324843505,"symbol":"RTSLA/USDT","error":"empty"}
+{"t":1790324843505,"symbol":"RMSFT/USDT","error":"empty"}
+{"t":1790325186998,"symbol":"RNVDA/USDT","error":"fetch failed"}
+{"t":1790325186998,"symbol":"RAAPL/USDT","error":"fetch failed"}
+{"t":1790325186998,"symbol":"RSPY/USDT","error":"fetch failed"}
+{"t":1790325186998,"symbol":"RQQQ/USDT","error":"fetch failed"}
+{"t":1790325186998,"symbol":"RTSLA/USDT","error":"fetch failed"}
+{"t":1790325186998,"symbol":"RMSFT/USDT","error":"fetch failed"}
+{"t":1790325583380,"symbol":"RNVDA/USDT","error":"fetch failed"}
+{"t":1790325583380,"symbol":"RAAPL/USDT","error":"fetch failed"}
+{"t":1790325583380,"symbol":"RSPY/USDT","error":"fetch failed"}
+{"t":1790325583380,"symbol":"RQQQ/USDT","error":"fetch failed"}
+{"t":1790325583380,"symbol":"RTSLA/USDT","error":"fetch failed"}
+{"t":1790325583380,"symbol":"RMSFT/USDT","error":"fetch failed"}
+{"t":1790349563924,"symbol":"RNVDA/USDT","error":"fetch failed"}
+{"t":1790349563924,"symbol":"RAAPL/USDT","error":"fetch failed"}
+{"t":1790349563924,"symbol":"RSPY/USDT","error":"fetch failed"}
+{"t":1790349563924,"symbol":"RQQQ/USDT","error":"fetch failed"}
+{"t":1790349563924,"symbol":"RTSLA/USDT","error":"fetch failed"}
+{"t":1790349563924,"symbol":"RMSFT/USDT","error":"fetch failed"}
+{"t":1790349864893,"symbol":"RNVDA/USDT","error":"fetch failed"}
+{"t":1790349864893,"symbol":"RAAPL/USDT","error":"fetch failed"}
+{"t":1790349864893,"symbol":"RSPY/USDT","error":"fetch failed"}
+{"t":1790349864893,"symbol":"RQQQ/USDT","error":"fetch failed"}
+{"t":1790349864893,"symbol":"RTSLA/USDT","error":"fetch failed"}
+{"t":1790349864893,"symbol":"RMSFT/USDT","error":"fetch failed"}
+{"t":1790350165762,"symbol":"RNVDA/USDT","error":"empty"}
+{"t":1790350165762,"symbol":"RAAPL/USDT","error":"empty"}
+{"t":1790350165762,"symbol":"RSPY/USDT","error":"empty"}
+{"t":1790350165762,"symbol":"RQQQ/USDT","error":"empty"}
+{"t":1790350165762,"symbol":"RTSLA/USDT","error":"empty"}
+{"t":1790350165762,"symbol":"RMSFT/USDT","error":"empty"}
+{"t":1790350482609,"symbol":"RNVDA/USDT","error":"empty"}
+{"t":1790350482609,"symbol":"RAAPL/USDT","error":"empty"}
+{"t":1790350482609,"symbol":"RSPY/USDT","error":"empty"}
+{"t":1790350482609,"symbol":"RQQQ/USDT","error":"empty"}
+{"t":1790350482609,"symbol":"RTSLA/USDT","error":"empty"}
+{"t":1790350482609,"symbol":"RMSFT/USDT","error":"empty"}
+{"t":1790350803374,"symbol":"RNVDA/USDT","error":"empty"}
+{"t":1790350803374,"symbol":"RAAPL/USDT","error":"empty"}
+{"t":1790350803374,"symbol":"RSPY/USDT","error":"empty"}
+{"t":1790350803374,"symbol":"RQQQ/USDT","error":"empty"}
+{"t":1790350803374,"symbol":"RTSLA/USDT","error":"empty"}
+{"t":1790350803374,"symbol":"RMSFT/USDT","error":"empty"}
+{"t":1790351132572,"symbol":"RNVDA/USDT","error":"fetch failed"}
+{"t":1790351132572,"symbol":"RAAPL/USDT","error":"fetch failed"}
+{"t":1790351132572,"symbol":"RSPY/USDT","error":"fetch failed"}
+{"t":1790351132572,"symbol":"RQQQ/USDT","error":"fetch failed"}
+{"t":1790351132572,"symbol":"RTSLA/USDT","error":"fetch failed"}
+{"t":1790351132572,"symbol":"RMSFT/USDT","error":"fetch failed"}
+{"t":1790351539613,"symbol":"RNVDA/USDT","error":"fetch failed"}
+{"t":1790351539613,"symbol":"RAAPL/USDT","error":"fetch failed"}
+{"t":1790351539613,"symbol":"RSPY/USDT","error":"fetch failed"}
+{"t":1790351539613,"symbol":"RQQQ/USDT","error":"fetch failed"}
+{"t":1790351539613,"symbol":"RTSLA/USDT","error":"fetch failed"}
+{"t":1790351539613,"symbol":"RMSFT/USDT","error":"fetch failed"}
+{"t":1790351946175,"symbol":"RNVDA/USDT","error":"fetch failed"}
+{"t":1790351946175,"symbol":"RAAPL/USDT","error":"fetch failed"}
+{"t":1790351946175,"symbol":"RSPY/USDT","error":"fetch failed"}
+{"t":1790351946175,"symbol":"RQQQ/USDT","error":"fetch failed"}
+{"t":1790351946175,"symbol":"RTSLA/USDT","error":"fetch failed"}
+{"t":1790351946175,"symbol":"RMSFT/USDT","error":"fetch failed"}
+{"t":1790352246202,"symbol":"RNVDA/USDT","error":"fetch failed"}
+{"t":1790352246202,"symbol":"RAAPL/USDT","error":"fetch failed"}
+{"t":1790352246202,"symbol":"RSPY/USDT","error":"fetch failed"}
+{"t":1790352246202,"symbol":"RQQQ/USDT","error":"fetch failed"}
+{"t":1790352246202,"symbol":"RTSLA/USDT","error":"fetch failed"}
+{"t":1790352246202,"symbol":"RMSFT/USDT","error":"fetch failed"}
+{"t":1790352546238,"symbol":"RNVDA/USDT","error":"fetch failed"}
+{"t":1790352546238,"symbol":"RAAPL/USDT","error":"fetch failed"}
+{"t":1790352546238,"symbol":"RSPY/USDT","error":"fetch failed"}
+{"t":1790352546238,"symbol":"RQQQ/USDT","error":"fetch failed"}
+{"t":1790352546238,"symbol":"RTSLA/USDT","error":"fetch failed"}
+{"t":1790352546238,"symbol":"RMSFT/USDT","error":"fetch failed"}
+{"t":1790352846289,"symbol":"RNVDA/USDT","error":"fetch failed"}
+{"t":1790352846289,"symbol":"RAAPL/USDT","error":"fetch failed"}
+{"t":1790352846289,"symbol":"RSPY/USDT","error":"fetch failed"}
+{"t":1790352846289,"symbol":"RQQQ/USDT","error":"fetch failed"}
+{"t":1790352846289,"symbol":"RTSLA/USDT","error":"fetch failed"}
+{"t":1790352846289,"symbol":"RMSFT/USDT","error":"fetch failed"}
+{"t":1790353146342,"symbol":"RNVDA/USDT","error":"fetch failed"}
+{"t":1790353146342,"symbol":"RAAPL/USDT","error":"fetch failed"}
+{"t":1790353146342,"symbol":"RSPY/USDT","error":"fetch failed"}
+{"t":1790353146342,"symbol":"RQQQ/USDT","error":"fetch failed"}
+{"t":1790353146342,"symbol":"RTSLA/USDT","error":"fetch failed"}
+{"t":1790353146342,"symbol":"RMSFT/USDT","error":"fetch failed"}
+{"t":1790353446399,"symbol":"RNVDA/USDT","error":"fetch failed"}
+{"t":1790353446399,"symbol":"RAAPL/USDT","error":"fetch failed"}
+{"t":1790353446399,"symbol":"RSPY/USDT","error":"fetch failed"}
+{"t":1790353446399,"symbol":"RQQQ/USDT","error":"fetch failed"}
+{"t":1790353446399,"symbol":"RTSLA/USDT","error":"fetch failed"}
+{"t":1790353446399,"symbol":"RMSFT/USDT","error":"fetch failed"}
+{"t":1790353746473,"symbol":"RNVDA/USDT","error":"fetch failed"}
+{"t":1790353746473,"symbol":"RAAPL/USDT","error":"fetch failed"}
+{"t":1790353746473,"symbol":"RSPY/USDT","error":"fetch failed"}
+{"t":1790353746473,"symbol":"RQQQ/USDT","error":"fetch failed"}
+{"t":1790353746473,"symbol":"RTSLA/USDT","error":"fetch failed"}
+{"t":1790353746473,"symbol":"RMSFT/USDT","error":"fetch failed"}
+{"t":1790354046533,"symbol":"RNVDA/USDT","error":"fetch failed"}
+{"t":1790354046533,"symbol":"RAAPL/USDT","error":"fetch failed"}
+{"t":1790354046533,"symbol":"RSPY/USDT","error":"fetch failed"}
+{"t":1790354046533,"symbol":"RQQQ/USDT","error":"fetch failed"}
+{"t":1790354046533,"symbol":"RTSLA/USDT","error":"fetch failed"}
+{"t":1790354046533,"symbol":"RMSFT/USDT","error":"fetch failed"}
+{"t":1790354346590,"symbol":"RNVDA/USDT","error":"fetch failed"}
+{"t":1790354346590,"symbol":"RAAPL/USDT","error":"fetch failed"}
+{"t":1790354346590,"symbol":"RSPY/USDT","error":"fetch failed"}
+{"t":1790354346590,"symbol":"RQQQ/USDT","error":"fetch failed"}
+{"t":1790354346590,"symbol":"RTSLA/USDT","error":"fetch failed"}
+{"t":1790354346590,"symbol":"RMSFT/USDT","error":"fetch failed"}
+{"t":1790354646651,"symbol":"RNVDA/USDT","error":"fetch failed"}
+{"t":1790354646651,"symbol":"RAAPL/USDT","error":"fetch failed"}
+{"t":1790354646651,"symbol":"RSPY/USDT","error":"fetch failed"}
+{"t":1790354646651,"symbol":"RQQQ/USDT","error":"fetch failed"}
+{"t":1790354646651,"symbol":"RTSLA/USDT","error":"fetch failed"}
+{"t":1790354646651,"symbol":"RMSFT/USDT","error":"fetch failed"}
+{"t":1790354946732,"symbol":"RNVDA/USDT","error":"fetch failed"}
+{"t":1790354946732,"symbol":"RAAPL/USDT","error":"fetch failed"}
+{"t":1790354946732,"symbol":"RSPY/USDT","error":"fetch failed"}
+{"t":1790354946732,"symbol":"RQQQ/USDT","error":"fetch failed"}
+{"t":1790354946732,"symbol":"RTSLA/USDT","error":"fetch failed"}
+{"t":1790354946732,"symbol":"RMSFT/USDT","error":"fetch failed"}
+{"t":1790355246842,"symbol":"RNVDA/USDT","error":"fetch failed"}
+{"t":1790355246842,"symbol":"RAAPL/USDT","error":"fetch failed"}
+{"t":1790355246842,"symbol":"RSPY/USDT","error":"fetch failed"}
+{"t":1790355246842,"symbol":"RQQQ/USDT","error":"fetch failed"}
+{"t":1790355246842,"symbol":"RTSLA/USDT","error":"fetch failed"}
+{"t":1790355246842,"symbol":"RMSFT/USDT","error":"fetch failed"}
+{"t":1790355546921,"symbol":"RNVDA/USDT","error":"fetch failed"}
+{"t":1790355546921,"symbol":"RAAPL/USDT","error":"fetch failed"}
+{"t":1790355546921,"symbol":"RSPY/USDT","error":"fetch failed"}
+{"t":1790355546921,"symbol":"RQQQ/USDT","error":"fetch failed"}
+{"t":1790355546921,"symbol":"RTSLA/USDT","error":"fetch failed"}
+{"t":1790355546921,"symbol":"RMSFT/USDT","error":"fetch failed"}
+{"t":1790355846970,"symbol":"RNVDA/USDT","error":"fetch failed"}
+{"t":1790355846970,"symbol":"RAAPL/USDT","error":"fetch failed"}
+{"t":1790355846970,"symbol":"RSPY/USDT","error":"fetch failed"}
+{"t":1790355846970,"symbol":"RQQQ/USDT","error":"fetch failed"}
+{"t":1790355846970,"symbol":"RTSLA/USDT","error":"fetch failed"}
+{"t":1790355846970,"symbol":"RMSFT/USDT","error":"fetch failed"}
+{"t":1790356147040,"symbol":"RNVDA/USDT","error":"fetch failed"}
+{"t":1790356147040,"symbol":"RAAPL/USDT","error":"fetch failed"}
+{"t":1790356147040,"symbol":"RSPY/USDT","error":"fetch failed"}
+{"t":1790356147040,"symbol":"RQQQ/USDT","error":"fetch failed"}
+{"t":1790356147040,"symbol":"RTSLA/USDT","error":"fetch failed"}
+{"t":1790356147040,"symbol":"RMSFT/USDT","error":"fetch failed"}
+{"t":1790356447125,"symbol":"RNVDA/USDT","error":"fetch failed"}
+{"t":1790356447125,"symbol":"RAAPL/USDT","error":"fetch failed"}
+{"t":1790356447125,"symbol":"RSPY/USDT","error":"fetch failed"}
+{"t":1790356447125,"symbol":"RQQQ/USDT","error":"fetch failed"}
+{"t":1790356447125,"symbol":"RTSLA/USDT","error":"fetch failed"}
+{"t":1790356447125,"symbol":"RMSFT/USDT","error":"fetch failed"}
+{"t":1790356747181,"symbol":"RNVDA/USDT","error":"fetch failed"}
+{"t":1790356747181,"symbol":"RAAPL/USDT","error":"fetch failed"}
+{"t":1790356747181,"symbol":"RSPY/USDT","error":"fetch failed"}
+{"t":1790356747181,"symbol":"RQQQ/USDT","error":"fetch failed"}
+{"t":1790356747181,"symbol":"RTSLA/USDT","error":"fetch failed"}
+{"t":1790356747181,"symbol":"RMSFT/USDT","error":"fetch failed"}
+{"t":1790357047233,"symbol":"RNVDA/USDT","error":"fetch failed"}
+{"t":1790357047233,"symbol":"RAAPL/USDT","error":"fetch failed"}
+{"t":1790357047233,"symbol":"RSPY/USDT","error":"fetch failed"}
+{"t":1790357047233,"symbol":"RQQQ/USDT","error":"fetch failed"}
+{"t":1790357047233,"symbol":"RTSLA/USDT","error":"fetch failed"}
+{"t":1790357047233,"symbol":"RMSFT/USDT","error":"fetch failed"}
+{"t":1790357347273,"symbol":"RNVDA/USDT","error":"fetch failed"}
+{"t":1790357347273,"symbol":"RAAPL/USDT","error":"fetch failed"}
+{"t":1790357347273,"symbol":"RSPY/USDT","error":"fetch failed"}
+{"t":1790357347273,"symbol":"RQQQ/USDT","error":"fetch failed"}
+{"t":1790357347273,"symbol":"RTSLA/USDT","error":"fetch failed"}
+{"t":1790357347273,"symbol":"RMSFT/USDT","error":"fetch failed"}
+{"t":1790357647341,"symbol":"RNVDA/USDT","error":"fetch failed"}
+{"t":1790357647341,"symbol":"RAAPL/USDT","error":"fetch failed"}
+{"t":1790357647341,"symbol":"RSPY/USDT","error":"fetch failed"}
+{"t":1790357647341,"symbol":"RQQQ/USDT","error":"fetch failed"}
+{"t":1790357647341,"symbol":"RTSLA/USDT","error":"fetch failed"}
+{"t":1790357647341,"symbol":"RMSFT/USDT","error":"fetch failed"}
+{"t":1790357947389,"symbol":"RNVDA/USDT","error":"fetch failed"}
+{"t":1790357947389,"symbol":"RAAPL/USDT","error":"fetch failed"}
+{"t":1790357947389,"symbol":"RSPY/USDT","error":"fetch failed"}
+{"t":1790357947389,"symbol":"RQQQ/USDT","error":"fetch failed"}
+{"t":1790357947389,"symbol":"RTSLA/USDT","error":"fetch failed"}
+{"t":1790357947389,"symbol":"RMSFT/USDT","error":"fetch failed"}
+{"t":1790358247443,"symbol":"RNVDA/USDT","error":"fetch failed"}
+{"t":1790358247443,"symbol":"RAAPL/USDT","error":"fetch failed"}
+{"t":1790358247443,"symbol":"RSPY/USDT","error":"fetch failed"}
+{"t":1790358247443,"symbol":"RQQQ/USDT","error":"fetch failed"}
+{"t":1790358247443,"symbol":"RTSLA/USDT","error":"fetch failed"}
+{"t":1790358247443,"symbol":"RMSFT/USDT","error":"fetch failed"}
+{"t":1790358547533,"symbol":"RNVDA/USDT","error":"fetch failed"}
+{"t":1790358547533,"symbol":"RAAPL/USDT","error":"fetch failed"}
+{"t":1790358547533,"symbol":"RSPY/USDT","error":"fetch failed"}
+{"t":1790358547533,"symbol":"RQQQ/USDT","error":"fetch failed"}
+{"t":1790358547533,"symbol":"RTSLA/USDT","error":"fetch failed"}
+{"t":1790358547533,"symbol":"RMSFT/USDT","error":"fetch failed"}
+{"t":1790358847592,"symbol":"RNVDA/USDT","error":"fetch failed"}
+{"t":1790358847592,"symbol":"RAAPL/USDT","error":"fetch failed"}
+{"t":1790358847592,"symbol":"RSPY/USDT","error":"fetch failed"}
+{"t":1790358847592,"symbol":"RQQQ/USDT","error":"fetch failed"}
+{"t":1790358847592,"symbol":"RTSLA/USDT","error":"fetch failed"}
+{"t":1790358847592,"symbol":"RMSFT/USDT","error":"fetch failed"}
+{"t":1790359147643,"symbol":"RNVDA/USDT","error":"fetch failed"}
+{"t":1790359147643,"symbol":"RAAPL/USDT","error":"fetch failed"}
+{"t":1790359147643,"symbol":"RSPY/USDT","error":"fetch failed"}
+{"t":1790359147643,"symbol":"RQQQ/USDT","error":"fetch failed"}
+{"t":1790359147643,"symbol":"RTSLA/USDT","error":"fetch failed"}
+{"t":1790359147643,"symbol":"RMSFT/USDT","error":"fetch failed"}
+{"t":1790359447732,"symbol":"RNVDA/USDT","error":"fetch failed"}
+{"t":1790359447732,"symbol":"RAAPL/USDT","error":"fetch failed"}
+{"t":1790359447732,"symbol":"RSPY/USDT","error":"fetch failed"}
+{"t":1790359447732,"symbol":"RQQQ/USDT","error":"fetch failed"}
+{"t":1790359447732,"symbol":"RTSLA/USDT","error":"fetch failed"}
+{"t":1790359447732,"symbol":"RMSFT/USDT","error":"fetch failed"}
+{"t":1790359747800,"symbol":"RNVDA/USDT","error":"fetch failed"}
+{"t":1790359747800,"symbol":"RAAPL/USDT","error":"fetch failed"}
+{"t":1790359747800,"symbol":"RSPY/USDT","error":"fetch failed"}
+{"t":1790359747800,"symbol":"RQQQ/USDT","error":"fetch failed"}
+{"t":1790359747800,"symbol":"RTSLA/USDT","error":"fetch failed"}
+{"t":1790359747800,"symbol":"RMSFT/USDT","error":"fetch failed"}
+{"t":1790360047845,"symbol":"RNVDA/USDT","error":"fetch failed"}
+{"t":1790360047845,"symbol":"RAAPL/USDT","error":"fetch failed"}
+{"t":1790360047845,"symbol":"RSPY/USDT","error":"fetch failed"}
+{"t":1790360047845,"symbol":"RQQQ/USDT","error":"fetch failed"}
+{"t":1790360047845,"symbol":"RTSLA/USDT","error":"fetch failed"}
+{"t":1790360047845,"symbol":"RMSFT/USDT","error":"fetch failed"}
+{"t":1790360347906,"symbol":"RNVDA/USDT","error":"fetch failed"}
+{"t":1790360347906,"symbol":"RAAPL/USDT","error":"fetch failed"}
+{"t":1790360347906,"symbol":"RSPY/USDT","error":"fetch failed"}
+{"t":1790360347906,"symbol":"RQQQ/USDT","error":"fetch failed"}
+{"t":1790360347906,"symbol":"RTSLA/USDT","error":"fetch failed"}
+{"t":1790360347906,"symbol":"RMSFT/USDT","error":"fetch failed"}
+{"t":1790360647963,"symbol":"RNVDA/USDT","error":"fetch failed"}
+{"t":1790360647963,"symbol":"RAAPL/USDT","error":"fetch failed"}
+{"t":1790360647963,"symbol":"RSPY/USDT","error":"fetch failed"}
+{"t":1790360647963,"symbol":"RQQQ/USDT","error":"fetch failed"}
+{"t":1790360647963,"symbol":"RTSLA/USDT","error":"fetch failed"}
+{"t":1790360647963,"symbol":"RMSFT/USDT","error":"fetch failed"}
+{"t":1790360948039,"symbol":"RNVDA/USDT","error":"fetch failed"}
+{"t":1790360948039,"symbol":"RAAPL/USDT","error":"fetch failed"}
+{"t":1790360948039,"symbol":"RSPY/USDT","error":"fetch failed"}
+{"t":1790360948039,"symbol":"RQQQ/USDT","error":"fetch failed"}
+{"t":1790360948039,"symbol":"RTSLA/USDT","error":"fetch failed"}
+{"t":1790360948039,"symbol":"RMSFT/USDT","error":"fetch failed"}
+{"t":1790361248096,"symbol":"RNVDA/USDT","error":"fetch failed"}
+{"t":1790361248096,"symbol":"RAAPL/USDT","error":"fetch failed"}
+{"t":1790361248096,"symbol":"RSPY/USDT","error":"fetch failed"}
+{"t":1790361248096,"symbol":"RQQQ/USDT","error":"fetch failed"}
+{"t":1790361248096,"symbol":"RTSLA/USDT","error":"fetch failed"}
+{"t":1790361248096,"symbol":"RMSFT/USDT","error":"fetch failed"}
+{"t":1790361548220,"symbol":"RNVDA/USDT","error":"fetch failed"}
+{"t":1790361548220,"symbol":"RAAPL/USDT","error":"fetch failed"}
+{"t":1790361548220,"symbol":"RSPY/USDT","error":"fetch failed"}
+{"t":1790361548220,"symbol":"RQQQ/USDT","error":"fetch failed"}
+{"t":1790361548220,"symbol":"RTSLA/USDT","error":"fetch failed"}
+{"t":1790361548220,"symbol":"RMSFT/USDT","error":"fetch failed"}
+{"t":1790361848304,"symbol":"RNVDA/USDT","error":"fetch failed"}
+{"t":1790361848304,"symbol":"RAAPL/USDT","error":"fetch failed"}
+{"t":1790361848304,"symbol":"RSPY/USDT","error":"fetch failed"}
+{"t":1790361848304,"symbol":"RQQQ/USDT","error":"fetch failed"}
+{"t":1790361848304,"symbol":"RTSLA/USDT","error":"fetch failed"}
+{"t":1790361848304,"symbol":"RMSFT/USDT","error":"fetch failed"}
+{"t":1790362148331,"symbol":"RNVDA/USDT","error":"fetch failed"}
+{"t":1790362148331,"symbol":"RAAPL/USDT","error":"fetch failed"}
+{"t":1790362148331,"symbol":"RSPY/USDT","error":"fetch failed"}
+{"t":1790362148331,"symbol":"RQQQ/USDT","error":"fetch failed"}
+{"t":1790362148331,"symbol":"RTSLA/USDT","error":"fetch failed"}
+{"t":1790362148331,"symbol":"RMSFT/USDT","error":"fetch failed"}
+{"t":1790362448411,"symbol":"RNVDA/USDT","error":"fetch failed"}
+{"t":1790362448411,"symbol":"RAAPL/USDT","error":"fetch failed"}
+{"t":1790362448411,"symbol":"RSPY/USDT","error":"fetch failed"}
+{"t":1790362448411,"symbol":"RQQQ/USDT","error":"fetch failed"}
+{"t":1790362448411,"symbol":"RTSLA/USDT","error":"fetch failed"}
+{"t":1790362448411,"symbol":"RMSFT/USDT","error":"fetch failed"}
+{"t":1790362748464,"symbol":"RNVDA/USDT","error":"fetch failed"}
+{"t":1790362748464,"symbol":"RAAPL/USDT","error":"fetch failed"}
+{"t":1790362748464,"symbol":"RSPY/USDT","error":"fetch failed"}
+{"t":1790362748464,"symbol":"RQQQ/USDT","error":"fetch failed"}
+{"t":1790362748464,"symbol":"RTSLA/USDT","error":"fetch failed"}
+{"t":1790362748464,"symbol":"RMSFT/USDT","error":"fetch failed"}
+{"t":1790363048516,"symbol":"RNVDA/USDT","error":"fetch failed"}
+{"t":1790363048516,"symbol":"RAAPL/USDT","error":"fetch failed"}
+{"t":1790363048516,"symbol":"RSPY/USDT","error":"fetch failed"}
+{"t":1790363048516,"symbol":"RQQQ/USDT","error":"fetch failed"}
+{"t":1790363048516,"symbol":"RTSLA/USDT","error":"fetch failed"}
+{"t":1790363048516,"symbol":"RMSFT/USDT","error":"fetch failed"}
+{"t":1790363348550,"symbol":"RNVDA/USDT","error":"fetch failed"}
+{"t":1790363348550,"symbol":"RAAPL/USDT","error":"fetch failed"}
+{"t":1790363348550,"symbol":"RSPY/USDT","error":"fetch failed"}
+{"t":1790363348550,"symbol":"RQQQ/USDT","error":"fetch failed"}
+{"t":1790363348550,"symbol":"RTSLA/USDT","error":"fetch failed"}
+{"t":1790363348550,"symbol":"RMSFT/USDT","error":"fetch failed"}
+{"t":1790363648588,"symbol":"RNVDA/USDT","error":"fetch failed"}
+{"t":1790363648588,"symbol":"RAAPL/USDT","error":"fetch failed"}
+{"t":1790363648588,"symbol":"RSPY/USDT","error":"fetch failed"}
+{"t":1790363648588,"symbol":"RQQQ/USDT","error":"fetch failed"}
+{"t":1790363648588,"symbol":"RTSLA/USDT","error":"fetch failed"}
+{"t":1790363648588,"symbol":"RMSFT/USDT","error":"fetch failed"}
+{"t":1790363948628,"symbol":"RNVDA/USDT","error":"fetch failed"}
+{"t":1790363948628,"symbol":"RAAPL/USDT","error":"fetch failed"}
+{"t":1790363948628,"symbol":"RSPY/USDT","error":"fetch failed"}
+{"t":1790363948628,"symbol":"RQQQ/USDT","error":"fetch failed"}
+{"t":1790363948628,"symbol":"RTSLA/USDT","error":"fetch failed"}
+{"t":1790363948628,"symbol":"RMSFT/USDT","error":"fetch failed"}
+{"t":1790364248655,"symbol":"RNVDA/USDT","error":"fetch failed"}
+{"t":1790364248655,"symbol":"RAAPL/USDT","error":"fetch failed"}
+{"t":1790364248655,"symbol":"RSPY/USDT","error":"fetch failed"}
+{"t":1790364248655,"symbol":"RQQQ/USDT","error":"fetch failed"}
+{"t":1790364248655,"symbol":"RTSLA/USDT","error":"fetch failed"}
+{"t":1790364248655,"symbol":"RMSFT/USDT","error":"fetch failed"}
+{"t":1790364548700,"symbol":"RNVDA/USDT","error":"fetch failed"}
+{"t":1790364548700,"symbol":"RAAPL/USDT","error":"fetch failed"}
+{"t":1790364548700,"symbol":"RSPY/USDT","error":"fetch failed"}
+{"t":1790364548700,"symbol":"RQQQ/USDT","error":"fetch failed"}
+{"t":1790364548700,"symbol":"RTSLA/USDT","error":"fetch failed"}
+{"t":1790364548700,"symbol":"RMSFT/USDT","error":"fetch failed"}
+{"t":1790364848779,"symbol":"RNVDA/USDT","error":"fetch failed"}
+{"t":1790364848779,"symbol":"RAAPL/USDT","error":"fetch failed"}
+{"t":1790364848779,"symbol":"RSPY/USDT","error":"fetch failed"}
+{"t":1790364848779,"symbol":"RQQQ/USDT","error":"fetch failed"}
+{"t":1790364848779,"symbol":"RTSLA/USDT","error":"fetch failed"}
+{"t":1790364848779,"symbol":"RMSFT/USDT","error":"fetch failed"}
+{"t":1790365148809,"symbol":"RNVDA/USDT","error":"fetch failed"}
+{"t":1790365148809,"symbol":"RAAPL/USDT","error":"fetch failed"}
+{"t":1790365148809,"symbol":"RSPY/USDT","error":"fetch failed"}
+{"t":1790365148809,"symbol":"RQQQ/USDT","error":"fetch failed"}
+{"t":1790365148809,"symbol":"RTSLA/USDT","error":"fetch failed"}
+{"t":1790365148809,"symbol":"RMSFT/USDT","error":"fetch failed"}
+{"t":1790365448850,"symbol":"RNVDA/USDT","error":"fetch failed"}
+{"t":1790365448850,"symbol":"RAAPL/USDT","error":"fetch failed"}
+{"t":1790365448850,"symbol":"RSPY/USDT","error":"fetch failed"}
+{"t":1790365448850,"symbol":"RQQQ/USDT","error":"fetch failed"}
+{"t":1790365448850,"symbol":"RTSLA/USDT","error":"fetch failed"}
+{"t":1790365448850,"symbol":"RMSFT/USDT","error":"fetch failed"}
+{"t":1790365748892,"symbol":"RNVDA/USDT","error":"fetch failed"}
+{"t":1790365748892,"symbol":"RAAPL/USDT","error":"fetch failed"}
+{"t":1790365748892,"symbol":"RSPY/USDT","error":"fetch failed"}
+{"t":1790365748892,"symbol":"RQQQ/USDT","error":"fetch failed"}
+{"t":1790365748892,"symbol":"RTSLA/USDT","error":"fetch failed"}
+{"t":1790365748892,"symbol":"RMSFT/USDT","error":"fetch failed"}
+{"t":1790366048964,"symbol":"RNVDA/USDT","error":"fetch failed"}
+{"t":1790366048964,"symbol":"RAAPL/USDT","error":"fetch failed"}
+{"t":1790366048964,"symbol":"RSPY/USDT","error":"fetch failed"}
+{"t":1790366048964,"symbol":"RQQQ/USDT","error":"fetch failed"}
+{"t":1790366048964,"symbol":"RTSLA/USDT","error":"fetch failed"}
+{"t":1790366048964,"symbol":"RMSFT/USDT","error":"fetch failed"}
+{"t":1790366349004,"symbol":"RNVDA/USDT","error":"fetch failed"}
+{"t":1790366349004,"symbol":"RAAPL/USDT","error":"fetch failed"}
+{"t":1790366349004,"symbol":"RSPY/USDT","error":"fetch failed"}
+{"t":1790366349004,"symbol":"RQQQ/USDT","error":"fetch failed"}
+{"t":1790366349004,"symbol":"RTSLA/USDT","error":"fetch failed"}
+{"t":1790366349004,"symbol":"RMSFT/USDT","error":"fetch failed"}
+{"t":1790366649049,"symbol":"RNVDA/USDT","error":"fetch failed"}
+{"t":1790366649049,"symbol":"RAAPL/USDT","error":"fetch failed"}
+{"t":1790366649049,"symbol":"RSPY/USDT","error":"fetch failed"}
+{"t":1790366649049,"symbol":"RQQQ/USDT","error":"fetch failed"}
+{"t":1790366649049,"symbol":"RTSLA/USDT","error":"fetch failed"}
+{"t":1790366649049,"symbol":"RMSFT/USDT","error":"fetch failed"}
+{"t":1790366949096,"symbol":"RNVDA/USDT","error":"fetch failed"}
+{"t":1790366949096,"symbol":"RAAPL/USDT","error":"fetch failed"}
+{"t":1790366949096,"symbol":"RSPY/USDT","error":"fetch failed"}
+{"t":1790366949096,"symbol":"RQQQ/USDT","error":"fetch failed"}
+{"t":1790366949096,"symbol":"RTSLA/USDT","error":"fetch failed"}
+{"t":1790366949096,"symbol":"RMSFT/USDT","error":"fetch failed"}
+{"t":1790367249131,"symbol":"RNVDA/USDT","error":"fetch failed"}
+{"t":1790367249131,"symbol":"RAAPL/USDT","error":"fetch failed"}
+{"t":1790367249131,"symbol":"RSPY/USDT","error":"fetch failed"}
+{"t":1790367249131,"symbol":"RQQQ/USDT","error":"fetch failed"}
+{"t":1790367249131,"symbol":"RTSLA/USDT","error":"fetch failed"}
+{"t":1790367249131,"symbol":"RMSFT/USDT","error":"fetch failed"}
+{"t":1790367549189,"symbol":"RNVDA/USDT","error":"fetch failed"}
+{"t":1790367549189,"symbol":"RAAPL/USDT","error":"fetch failed"}
+{"t":1790367549189,"symbol":"RSPY/USDT","error":"fetch failed"}
+{"t":1790367549189,"symbol":"RQQQ/USDT","error":"fetch failed"}
+{"t":1790367549189,"symbol":"RTSLA/USDT","error":"fetch failed"}
+{"t":1790367549189,"symbol":"RMSFT/USDT","error":"fetch failed"}
+{"t":1790367849224,"symbol":"RNVDA/USDT","error":"fetch failed"}
+{"t":1790367849224,"symbol":"RAAPL/USDT","error":"fetch failed"}
+{"t":1790367849224,"symbol":"RSPY/USDT","error":"fetch failed"}
+{"t":1790367849224,"symbol":"RQQQ/USDT","error":"fetch failed"}
+{"t":1790367849224,"symbol":"RTSLA/USDT","error":"fetch failed"}
+{"t":1790367849224,"symbol":"RMSFT/USDT","error":"fetch failed"}
+{"t":1790368149249,"symbol":"RNVDA/USDT","error":"fetch failed"}
+{"t":1790368149249,"symbol":"RAAPL/USDT","error":"fetch failed"}
+{"t":1790368149249,"symbol":"RSPY/USDT","error":"fetch failed"}
+{"t":1790368149249,"symbol":"RQQQ/USDT","error":"fetch failed"}
+{"t":1790368149249,"symbol":"RTSLA/USDT","error":"fetch failed"}
+{"t":1790368149249,"symbol":"RMSFT/USDT","error":"fetch failed"}
+{"t":1790368449316,"symbol":"RNVDA/USDT","error":"fetch failed"}
+{"t":1790368449316,"symbol":"RAAPL/USDT","error":"fetch failed"}
+{"t":1790368449316,"symbol":"RSPY/USDT","error":"fetch failed"}
+{"t":1790368449316,"symbol":"RQQQ/USDT","error":"fetch failed"}
+{"t":1790368449316,"symbol":"RTSLA/USDT","error":"fetch failed"}
+{"t":1790368449316,"symbol":"RMSFT/USDT","error":"fetch failed"}
+{"t":1790368749353,"symbol":"RNVDA/USDT","error":"fetch failed"}
+{"t":1790368749353,"symbol":"RAAPL/USDT","error":"fetch failed"}
+{"t":1790368749353,"symbol":"RSPY/USDT","error":"fetch failed"}
+{"t":1790368749353,"symbol":"RQQQ/USDT","error":"fetch failed"}
+{"t":1790368749353,"symbol":"RTSLA/USDT","error":"fetch failed"}
+{"t":1790368749353,"symbol":"RMSFT/USDT","error":"fetch failed"}

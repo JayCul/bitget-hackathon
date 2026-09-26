@@ -1,7 +1,7 @@
 # Submission drafts
 
 Bitget AI Base Camp Hackathon S2, AI Trading Desk track. Two separate entries.
-Figures below are real outputs from the repo. Landed figures in [BRACKETS] are filled once the order-book sampler has covered the US session (scheduled 15:47 WAT, 25 Sep).
+Every figure below is a real output from the repo. No placeholders remain.
 
 ---
 
@@ -61,19 +61,21 @@ Miva Open University
 ### Project Description
 
 **1. Thesis**
-Salaried investors buy their whole allocation in one order the moment the credit alert lands. For a Lagos payday that is around 09:00 WAT, when the US market is closed. rTokens trade 24/7, but market makers can only hedge while Wall Street is open, so spreads widen and books thin out. Landed turns one payday allocation into a liquidity-aware execution plan.
+Salaried investors buy their whole allocation in one order the moment the credit alert lands, usually early in the morning, before Wall Street opens. What that buy costs depends on which rToken and how big the order is, and nobody shows them. Landed measures it from real Bitget order books and turns one payday allocation into an execution plan that splits orders and only uses hours it has actually measured.
 
 **2. Target user**
 Salaried professionals in emerging markets who buy US stock rTokens with their pay and can't trade during US hours (14:30 to 21:00 WAT) because they're at work.
 
 **3. Validation data**
-- Bitget has no spread history, so Landed records its own: live rToken order books for NVDA, AAPL, SPY, QQQ, TSLA and MSFT sampled every 5 minutes, [LANDED_SAMPLES] samples so far (OBSERVED).
-- Measured median spread by market state, overnight vs US session: [LANDED_SPREADS] (OBSERVED, sampled books).
-- Payday at 09:00 WAT, NVDA, AAPL and SPY in 2 tranches each: buying everything at the alert costs [LANDED_BASELINE_BPS]; the Landed plan costs [LANDED_PLAN_BPS] (ESTIMATED).
-- Historical replay over 8 past paydays: average [LANDED_SAVED_BPS] kept per payday ([LANDED_SAVED_USD]), with the price effect of waiting reported separately at [LANDED_PRICE_EFFECT] because it is timing luck (BACKTESTED, Bitget 1h bars; not live savings).
+- Bitget has no spread history, so Landed records its own: 136 live order-book samples of rNVDA, rAAPL, rSPY, rQQQ, rTSLA and rMSFT, taken every 5 minutes during New York overnight hours on 25 Sep 2026 (OBSERVED).
+- Spreads differ about 6x between rTokens at the same hour: median rTSLA 1.6 bps, rNVDA 1.8, rQQQ 6.0, rSPY 7.3, rAAPL 9.5, rMSFT 9.8 (OBSERVED).
+- Order size matters as much as the asset. rAAPL had a median of only $4,687 of depth within 25 bps of mid. Walking the real book, a $500 buy cost 5.0 bps and a $10,000 buy cost 25.1 bps, five times more per dollar (OBSERVED). rNVDA: 1.7 bps at $500, 3.7 bps at $10,000.
+- Splitting a $10,000 rAAPL buy into $500 tranches keeps each order near the top of the book: about 20 bps, roughly $20, kept on that one order (ESTIMATED from the measured book).
+- Not tested: whether US-session hours are cheaper. Bitget's data API returned 503 on every query from 08:48 WAT on 25 Sep through the end of that day's US session, and the next session falls after the deadline. The planner only uses measured hours, shows the rest as not measured, and never guesses.
+- The historical replay (8 past paydays, Bitget 1h bars) reports the price effect of waiting separately from execution cost, because it is timing luck (BACKTESTED, not live savings).
 
 **4. Progress**
-Complete and deployed. Payday setup (salary, bills, buffer, your own naira rate), deterministic plan with an execution timeline, per-window spread, depth and volatility, an AI explanation, a what-if instrument (invest more, wait, liquidity worsens, split more), confirmation with simulated fills against Bitget's live order book logged to landed-sim.jsonl, and an 8-week historical replay.
+Complete and deployed. Payday setup (salary, bills, buffer, your own naira rate), deterministic plan with an execution timeline, per-window spread, depth and volatility, an AI explanation, a what-if instrument (invest more, wait, liquidity worsens, split more), confirmation with simulated fills against Bitget's live order book logged to landed-sim.jsonl, and an 8-week historical replay. The order-book sampler and its dataset are in the repo, so measurement can extend to every market state. 55 unit tests.
 
 **5. Deliverables**
 Live app (landed-bitget.vercel.app), open-source code with README, the order-book sampler and its dataset, demo video.
@@ -88,7 +90,7 @@ Groq-hosted openai/gpt-oss-20b. One call: explain the already-computed plan in t
 Miva Open University
 
 ### X post (Landed)
-> Your salary landed. Don't waste the spread. Buying rTokens the moment the alert hits pays overnight spreads. Landed measures Bitget order books around the clock and times your payday buys to the hours where you keep more. @Bitget_AI #BitgetHackathon https://landed-bitget.vercel.app
+> Your salary landed. Don't waste the spread. On Bitget's real order books, a $10k rAAPL buy cost 25 bps vs 5 bps for $500. Landed measures the book and splits your payday buys so you keep more. @Bitget_AI #BitgetHackathon https://landed-bitget.vercel.app
 
 ---
 

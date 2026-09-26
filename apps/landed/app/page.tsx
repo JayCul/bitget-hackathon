@@ -75,7 +75,7 @@ export default async function Landing() {
               </span>
             </h1>
             <p className="rise mt-7 max-w-md text-[17px] leading-relaxed text-muted" style={{ ["--d" as string]: "240ms" }}>
-              Turn payday into a deliberate execution plan, timed to when the market is deep.
+              Turn payday into a deliberate execution plan, built on measured order books.
             </p>
             <div className="rise mt-9 flex flex-wrap justify-center gap-3" style={{ ["--d" as string]: "320ms" }}>
               <Link href="/plan" className={`${pill} bg-fg text-black hover:bg-accent-2 hover:shadow-[0_0_40px_-8px_var(--color-accent)]`}>
@@ -117,19 +117,19 @@ export default async function Landing() {
                 <div className="relative h-10 rounded-sm border border-white/10">
                   {/* WAT day: US regular session is 14:30 to 21:00 WAT while New York is on daylight time */}
                   <div className="absolute inset-y-0 left-[60.4%] w-[27.1%] bg-accent/25" />
-                  <div className="absolute inset-y-0 left-[37.5%] w-px bg-fg" />
+                  <div className="absolute inset-y-0 left-[35.4%] w-px bg-fg" />
                 </div>
                 <div className="flex justify-between font-mono text-[10px] text-muted">
                   <span>00:00</span>
-                  <span>09:00 alert</span>
+                  <span>08:30 alert</span>
                   <span>14:30 to 21:00 US session</span>
                   <span>24:00</span>
                 </div>
               </div>
             }
           >
-            The alert usually arrives in the morning. Wall Street opens hours later. rTokens still trade in between, but the market makers behind
-            them cannot hedge until New York wakes up.
+            The alert usually arrives in the morning, hours before Wall Street opens. rTokens still trade in between, and what a buy costs then
+            depends on the asset and the size of the order.
           </Statement>
 
           <Statement
@@ -182,7 +182,7 @@ export default async function Landing() {
               </svg>
             }
           >
-            One order at the worst hour pays the widest spread on all of it. Split into tranches, each can wait for a better window.
+            One large order walks deep into a thin book. Measured on rAAPL: $500 costs 5 bps, $10,000 costs 25 bps. Split into tranches, each stays near the top of the book.
           </Statement>
 
           <Statement
@@ -210,7 +210,7 @@ export default async function Landing() {
               </div>
             }
           >
-            Landed samples Bitget&apos;s order books around the clock and measures what each hour really costs. Your orders go where you keep more.
+            Landed samples Bitget&apos;s order books and only plans in hours it has actually measured. Hours it has not measured are shown, never guessed.
           </Statement>
         </section>
 

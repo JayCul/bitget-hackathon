@@ -173,7 +173,7 @@ export function SetupSequence({ onBuild, busy }: { onBuild: () => void; busy: bo
               <SystemLabel>Payday</SystemLabel>
               <div className="flex flex-col gap-2" role="radiogroup" aria-label="When the money lands">
                 {([
-                  ["morning", `${new Date(nextPaydayMorning()).toLocaleDateString("en-GB", { timeZone: "Africa/Lagos", weekday: "long" })}, 09:00`, "When salary alerts usually land"],
+                  ["morning", `${new Date(nextPaydayMorning()).toLocaleDateString("en-GB", { timeZone: "Africa/Lagos", weekday: "long" })}, 08:30`, "When salary alerts usually land"],
                   ["now", `Right now, ${now.toLocaleTimeString("en-GB", { timeZone: "Africa/Lagos", hour: "2-digit", minute: "2-digit" })}`, "Plan from this minute"],
                 ] as const).map(([v, label, sub]) => (
                   <button

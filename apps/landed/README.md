@@ -35,6 +35,15 @@ Bitget offers no historical spreads or order books (see `docs/tools.md`), so Lan
 
 The K-line `volume` field for rTokens tracks the underlying US stock's volume, not Bitget's own book, so Landed does not use it as a liquidity measure.
 
+## Data status at submission
+
+The shipped dataset holds 136 order-book samples from New York overnight hours on 25 Sep 2026. Bitget's data API returned 503 on every query from 08:48 WAT that day through the end of the US session, so pre-market, US-session and weekend books were not measured before the deadline. What the samples show:
+
+- Median spread by rToken at the same hour: rTSLA 1.6 bps, rNVDA 1.8, rQQQ 6.0, rSPY 7.3, rAAPL 9.5, rMSFT 9.8.
+- Order size: rAAPL had about $4.7k of depth within 25 bps; a $500 buy cost 5.0 bps and a $10,000 buy 25.1 bps.
+
+The planner only uses measured hours and marks the rest as not measured. Run `node scripts/sample-spreads.mjs` across a US session to extend the model.
+
 ## Role of the LLM
 
 Groq, `openai/gpt-oss-20b` (configurable). One call: explain the already-computed plan in two sentences. All cost, schedule and replay maths is in code with unit tests (`lib/landed.test.ts`).
