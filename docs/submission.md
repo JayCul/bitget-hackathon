@@ -1,7 +1,7 @@
 # Submission drafts
 
 Form: https://docs.google.com/forms/d/e/1FAIpQLScojKm9H2xDNFL3ijcDcKxwG-_PvkmyimiAB-SEFOx_WsqGNA/viewform
-Deadline: 8 October 2026, 23:59 (UTC+8). Submit **two responses**, one per project ("A team may enter up to two different themes with two independent projects").
+Deadline: the form says 8 October 2026, but the event site (bitget-ai.gitbook.io/bitgetai_hackathons2) says 27 September 2026, 23:59 UTC+8. Submitting by 27 September. Submit **two responses**, one per project ("A team may enter up to two different themes with two independent projects").
 Every figure below is a real output from the repo.
 
 ## Same in both responses
@@ -60,7 +60,7 @@ Run records:
 - Recorded replay (real Bitget prices, earnings, analyst notes, news, 10 to 31 Aug 2026): https://github.com/JayCul/bitget-hackathon/blob/main/apps/prequel/data/replays/NVDA-2026-08-10.json
 - Full pipeline output for the demo thesis (headlines, analogs, outcomes): https://github.com/JayCul/bitget-hackathon/blob/main/apps/prequel/data/demo/board.json
 - Verified Bitget API notes: https://github.com/JayCul/bitget-hackathon/blob/main/docs/tools.md
-Demo video: [your Prequel YouTube link]
+Demo video: https://youtu.be/UeaHtyQtUbI
 ```
 
 ### Role of the LLM/AI
@@ -70,7 +70,7 @@ Groq-hosted open models (openai/gpt-oss-120b; Qwen3 supported through configurat
 3. News matching in replay: the model returns a headline id, a news id and a confidence. Code decides what fires, at 0.7 or above.
 All numbers (returns, counts, medians, balance, conviction, price levels) are computed in code. The model never produces a figure the UI shows as data, and reasons containing figures are withheld.
 
-**X Project Post URL:** [your Prequel post URL]
+**X Project Post URL:** https://x.com/Justincul/status/2103709588063182959
 
 ---
 
@@ -118,4 +118,4 @@ Demo video: https://youtu.be/PC2k0zH3MRs
 ### Role of the LLM/AI
 Groq-hosted openai/gpt-oss-20b. One call: explain the already-computed plan in two sentences, given only the computed facts. Investable amount, schedule, costs, savings and replay figures are all deterministic code with unit tests. The model never recalculates.
 
-**X Project Post URL:** [your Landed post URL]
+**X Project Post URL:** https://x.com/Justincul/status/2103709190401204391

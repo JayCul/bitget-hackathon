@@ -6,6 +6,8 @@ Prequel stress-tests a trade thesis before you open the position. Bitget AI Base
 
 Built by Justin Nnaka, Master's student at Miva Open University.
 
+Live: https://prequel-bitget.vercel.app · Demo video: https://youtu.be/UeaHtyQtUbI
+
 ## The problem
 
 Traders open positions with a story but no exit plan. When news hits, they react emotionally, because they never decided in advance what would prove them wrong or right.
