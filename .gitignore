@@ -7,3 +7,6 @@ node_modules
 next-env.d.ts
 logs/*.jsonl
 data/cache/
+brag-output/
+apps/landed/public/brag/
+apps/landed/app/brag/
